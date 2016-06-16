@@ -139,6 +139,25 @@ Methods which are part of Javascript **String** Object:
 
 ------------------
 
+##### 4. Objects:
+
+In Javascript:
+
+| Types                          | Can be Objects | Are Always Objects|
+|--------------------------------|:--------------:|:-----------------:|
+| Booleans | ✔ |  |
+| Numbers | ✔ |  |
+| Strings | ✔ |  |
+| Dates | | ✔ |
+| Maths | | ✔ |
+| Regular Expressions | | ✔ |
+| Arrays | | ✔ |
+| Functions | | ✔ |
+| Objects | | ✔ |
+
+
+------------------
+
 ##### Oh snoop, that piece of code isn't right !
 
 Although the best of efforts have been put in to make sure the
