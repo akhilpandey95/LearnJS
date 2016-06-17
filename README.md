@@ -236,6 +236,54 @@ Object.access.property = {
 
 ------------------
 
+##### 7. Closures:
+
+Function Closures in Javascript is all about how are the variables being treated and referred to in the local or global scope. In Js variables can be given :
+
+- 'local scope'
+- 'global scope'
+
+There is no inbuilt concept for something called private variables, so when there is a requirement for such a scenario Closures are written in Js in order to make scope for variables that are private in scope.
+
+------------------
+
+##### 9. Tail Calls:
+
+Tail calls are nothing but essentially replacing the concept of recursive
+functions with loop. In a way this can not only save time but also saves
+space i.e better time complexity and space complexity.
+
+```javascript
+// snippet one
+function f(n) {
+	if(n == 0) {
+		return 1;
+	}
+	else {
+		return n * f(n-1);
+	}
+}
+
+// snippet two
+function f1(n) {
+	function r(n, m) {
+		if(n == 0) {
+			return m;
+		}
+		else {
+			return r(n-1, n*m);
+		}
+	}
+	return r(n, 1);
+}
+```
+
+Observing both the algorithms above written for factorial we can understand
+that f() is the traditional recursive method used for finding the factorial,
+but f1() is the tail call optimized algorithm which is better and fast.
+
+------------------
+
 ##### Oh snoop, that piece of code isn't right !
 
 Although the best of efforts have been put in to make sure the
