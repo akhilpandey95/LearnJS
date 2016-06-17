@@ -12,40 +12,41 @@ the best out of the language.
 
 ##### So what are all covered in the cheatsheet ?
 
-- Intro
-- Arrays
-- Strings
-- Objects
-- Functions
-- Conventions
-- Closures
-- Currying
+- [Intro]()
+- [Arrays]()
+- [Strings]()
+- [Objects]()
+- [Functions]()
+- [Conventions]()
+- [Closures]()
+- [Currying]()
+- [Tails Calls]()
 
 ------------------
 
 ##### 1. Intro:
 
-`Declarations`:
+`1.1 Declarations`:
 
 ```javascript
 
-    // bad
-    var arr = new Array();
-    var str = new String();
-    var num = new Number();
-    var boo = new Boolean();
-    var obj = new Object();
-    var reg = new RegExp();
-    var fun = new function();
+// bad
+var arr = new Array();
+var str = new String();
+var num = new Number();
+var boo = new Boolean();
+var obj = new Object();
+var reg = new RegExp();
+var fun = new function();
 
-    // good
-    var arr = [],
-        str = "",
-        num = 0,
-        boo = false,
-        obj = {},
-        reg = /()/,
-        fun = function(){};
+// good
+var arr = [],
+    str = "",
+    num = 0,
+    boo = false,
+    obj = {},
+    reg = /()/,
+    fun = function(){};
 ```
 
 We have to understand the fact that in Javascript everything is an object,
@@ -72,7 +73,7 @@ var bar = {};
 
 bar.name = "akhil pandey";
 bar.url = "www.akhilhector.com";
-bar.github = "AkhilHector"
+bar.github = "AkhilHector";
 bar.age = 20;
 
 if(typeof(bar) == typeof(foo)) {
@@ -145,16 +146,93 @@ In Javascript:
 
 | Types                          | Can be Objects | Are Always Objects|
 |--------------------------------|:--------------:|:-----------------:|
-| Booleans | ✔ |  |
-| Numbers | ✔ |  |
-| Strings | ✔ |  |
-| Dates | | ✔ |
-| Maths | | ✔ |
-| Regular Expressions | | ✔ |
-| Arrays | | ✔ |
-| Functions | | ✔ |
-| Objects | | ✔ |
+| **Booleans** | ✔ |  |
+| **Numbers** | ✔ |  |
+| **Strings** | ✔ |  |
+| **Dates** | | ✔ |
+| **Maths** | | ✔ |
+| **Regular Expressions** | | ✔ |
+| **Arrays** | | ✔ |
+| **Functions** | | ✔ |
 
+So basically except the primitive values all are objects in Javascript
+
+**4.1** `Objects can be created using three methods`:
+
+- **4.1.1** : "Define and create an object using an Object literal."
+```javascript
+// creating an oject using an Object literal
+var staff = {
+	name : "somename",
+	branch : "somebranch",
+	salary : "somesalary",
+	age : 20
+};
+```
+- **4.1.2** : "Define and create an object using an keyword new."
+```javascript
+// creating an object using new keyword
+var admin = new Object();
+admin.name = "somename";
+admin.department = "somedept";
+admin.userid = 123;
+admin.age = 20;
+```
+- **4.1.3** : "Define an object constructor and then create objects of its type."
+```javascript
+// creating an object using the object constructor
+function student(name, github_nick, url, age) {
+	this.name = name;
+	this.github = "https://github.com/" + github_nick;
+	this.url = url;
+	this.age = age;
+}
+```
+
+**4.2** `Using the constructor for the above defined Object` :
+```javascript
+var akhil = new student("Akhil Pandey", "AkhilHector", "https://www.akhilhector.com", "20");
+```
+
+**4.3** `Accessing object methods` :
+```javascript
+console.log(akhil.github);
+console.log(akhil.url);
+```
+
+**4.4** `Using the prototype property` :
+```javascript
+student.prototype.show = function() {
+	return this.name + " " + this.github + " " + this.age;
+}
+```
+
+**4.5** `Adding methods to the prototype` :
+```javascript
+function student(name, github_nick, url, age) {
+	this.name = name;
+	this.github = "https://github.com/" + github_nick;
+	this.url = url;
+	this.age = age;
+	this.show = function() {
+		return this.name + " " + this.github + " " + this.age;
+	}
+}
+```
+
+`NOTE`: Javasctipt objects are mutable which means that they are referenced by address and not value. For instance if 'master' is an object and 'master-backup' is also another object then if we pass the objects then changing one might result in changing the other object also.
+```javascript
+{
+ var master = {foo : "foo"};
+ var master-backup = master;
+ master.backup.bar = "bar"; // this changes master.bar and master-backup.bar
+}
+
+Object.access.property = {
+"Option1" : "we can use objectName.propertyName",
+"Option2" : "Either we can write objectName[propertyName]"
+}
+```
 
 ------------------
 
