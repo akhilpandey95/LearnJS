@@ -114,6 +114,42 @@ Methods part of Javascript **Array** Object:
 - **Array**.join(),
 - **Array**.toString()
 
+------------------
+**2.1 Array**.push() :
+```javascript
+var arr1 = [1, 2, 3, 4, 5];
+arr1.push(6);
+console.log(arr1); // it prints [1,2,3,4,5,6]
+```
+**Array**.push() is just a mutator function for adding elements to the array. So
+  we can simply mention the element as an argument to the function Array.push()
+  and the mentioned element would be added as the last element in the array.
+
+------------------
+**2.8 Array**.unshift() :
+```javascript
+var arr1 = [1, 2, 3, 4, 5];
+str = "akhil pandey";
+arr1.unshift(str);
+console.log(arr1); // it prints ["akhil pandey", 1, 2, 3, 4, 5];
+```
+
+  **Array**.unshift() falls into the same category as that of Array.push(), Since
+  both of them are used as mutator functions for adding elements into an array.
+  The only difference between both the methods is that if we pass an argument
+  to Array.unshift() then the element would be added as the first element of
+  the array.
+  If we observe the above snippet we can see that the index of the element
+  '1' is shifted to the next place and "akhil pandey" is added as the first
+  element of the array. So unlike Array.push() this method should not be
+  misunderstood only for adding elements since it adds elements to the start
+  of the Array.
+------------------
+
+
+
+------------------
+
 `TIPS[Arrays] :`
 
 - With the available list of the Array methods we can generally perform most of the operations, but if we require special methods or custom methods that must be part of the already existing Array Object then we define the method with by taking the concept of **Object.prototype**.
