@@ -126,6 +126,66 @@ console.log(arr1); // it prints [1,2,3,4,5,6]
   and the mentioned element would be added as the last element in the array.
 
 ------------------
+**2.2 Array**.pop()
+```javascript
+var arr1 = [1, 2, 3, 4, 5];
+arr1.pop();         // removes last element from the array
+arr1.pop(23);       // removes last element despite giving the number as argument
+arr1.pop("lol");    // removes last element despite giving the string as argument
+console.log(arr1);  // it prints [1,2,3,4]
+```
+  **Array**.pop() is just a simple mutator function for removing the last element
+  of the array. So the method doesnot take arguments, Although if we try to
+  pass arguments it would not take them. It performs only the basic operation
+  of removing the last element of the Array.
+
+------------------
+**2.6 Array**.splice() :
+```javascript
+// case 1 :
+var arr1 = [1, 2, 3, 4, 5];
+nums = [6, 7, 8, 9, 10]
+arr1.splice(5,0,nums)
+console.log(arr1); // it prints [1, 2, 3, 4, 5, [6, 7, 8, 9, 10]]
+
+// case 2 :
+var arr2 = ['one'];
+arr2.splice(1,0, 'two', 'three', 'four', 'five');
+console.log(arr2); // it prints ['one', 'two', 'three', 'four', 'five']
+
+// case 3 :
+var arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+arr3.splice(5,5);
+console.log(arr3); // it prints [1, 2, 3, 4, 5]
+```
+  **Array**.splice() has a varied set of operations that which could be
+  performed. If we observe case 1 we are adding elements to the array
+  arr1 from the fifth index. Also if we observe in case 2, we can see
+  that without assigning a variable the elements that which are to be
+  added are passed as continuous arguments.
+  It is to be noted that splice can not only perform the action of
+  adding elements but it also does perform the action of removing
+  elements. In the function splice(), if we choose the value of the
+  second argument to be '0' then elements would only be added from
+  the specified index, although if the value is not '0' then number
+  specified would be the number of elements that will be removed.
+
+------------------
+**2.7 Array**.shift() :
+```javascript
+var arr1 = [1, 2, 3, 4, 5, "akhil", "chandu", "varma", "kp", "adheeth"];
+arr1.shift();
+arr1.shift(123);
+arr1.shift("lolagain");
+console.log(arr1); // it prints [4,5,6,"akhil","chandu","varma","kp","adheeth"]
+```
+  **Array**.shift() is no different from the above mentioned method Array.pop(),
+  although the major difference comes regarding the index of the element
+  that which is to be removed. It removes the first element of the array.
+  Similar to Array.pop() this method also desnot take arguments and even
+  though an argument is passed it continues to perform its operation.
+
+------------------
 **2.8 Array**.unshift() :
 ```javascript
 var arr1 = [1, 2, 3, 4, 5];
@@ -133,7 +193,6 @@ str = "akhil pandey";
 arr1.unshift(str);
 console.log(arr1); // it prints ["akhil pandey", 1, 2, 3, 4, 5];
 ```
-
   **Array**.unshift() falls into the same category as that of Array.push(), Since
   both of them are used as mutator functions for adding elements into an array.
   The only difference between both the methods is that if we pass an argument
@@ -144,11 +203,9 @@ console.log(arr1); // it prints ["akhil pandey", 1, 2, 3, 4, 5];
   element of the array. So unlike Array.push() this method should not be
   misunderstood only for adding elements since it adds elements to the start
   of the Array.
-------------------
-
-
 
 ------------------
+
 
 `TIPS[Arrays] :`
 
