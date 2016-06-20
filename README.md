@@ -205,6 +205,60 @@ console.log(arr1); // it prints ["akhil pandey", 1, 2, 3, 4, 5];
   of the Array.
 
 ------------------
+**2.9 Array**.reverse() :
+```javascript
+var arr1 = [1, 'akhil', 'varma', 'chandu', 'adheeth'];
+arr1.reverse();
+console.log(arr1); // it prints ['adheeth', 'chandu', 'varma', 'akhil', 1]
+```
+  **Array**.reverse() is just a mutator function that which is used to
+  reverse the order of elements in the array.
+
+------------------
+**2.10 Array**.sort() :
+```javascript
+var arr1 = ['varma', 'chandu', 'akhil', 'adheeth'];
+var arr2 = [5, 6, 2, 9, 23];
+arr1.sort();
+arr2.sort();
+console.log(arr1); // it prints ['adheeth', 'akhil', 'chandu', 'varma']
+console.log(arr2); // it prints [2, 5, 6, 9, 23]
+```
+  **Array**.sort() is also another mutator function that which is used to
+  put the elements in order. Both strings and numbers can be sorted
+  using the Array.sort() method. The sorting takes place in ascending
+  order, so if strings or characters are elements then depending on
+  the alphabetical scale, the sorting takes place.
+
+------------------
+**2.11 Array**.map() :
+```javascript
+function add(arr) {
+        return arr = "My name is " + arr;
+}
+
+var arr1 = ["akhil", "varma", "chandu", "adheeth", "kp"];
+var combine = arr1.map(add);
+console.log(combine);
+/* it prints
+[   'My name is akhil',
+    'My name is varma',
+    'My name is chandu',
+    'My name is adheeth',
+    'My name is kp' ]
+*/
+```
+  **Array**.map() is a method which is more like an iterator function, but
+  the fundamental difference between this and Array.forEach() is that
+  Array.map() returns a new array with the result, whereas Array.forEach()
+  doesn't return a new array with the function result.
+
+  NOTE : Array.map() is a very powerful method and it can be applied to
+  diverse applications. Although since this method iterates over each
+  element using Array.map() must be carefully looked upon and should
+  not be put to use if the purpose is iterating over some elements.
+
+------------------
 
 
 `TIPS[Arrays] :`
