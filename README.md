@@ -337,6 +337,54 @@ c.union(d);
  the Javscript recognized objects such as the String, Number, Regexp or the Object
  itself.
 
+**Associative Arrays** :
+
+ Preferably this is somewhat a great part of the language although this has
+ been an integral part of many programming languages like PHP and Python, there
+ is a slight change to what it offers in other programming languages to this.
+
+ [NOTE]: In Python it is not called or referred to as Associative arrays but it
+ comes with the name Dictionaries.
+
+```javascript
+var a = [];
+var b = [];
+
+a["one"] = "boo this is my first item";
+a["two"] = "foo this is my second item";
+a["three"] = "alas this is final item";
+
+b[0] = "oh not again the first item";
+b[1] = "cant help with the second item";
+b[3] = "finally got rid with the third item";
+
+
+console.log(a); // would display the contents of the array 'a'
+console.log(b); // would display the contents of the array 'b'
+
+var len1 = a.length;
+var len2 = b.length;
+var len3 = Object.keys(a).length;
+
+console.log(len1); // would display undefined
+console.log(len2); // would display 3
+console.log(len3); // would display 3
+```
+ The above snippet is a classic case implementation of arrays with named
+ indexes or the associative arrays. Implementation can be done as mentioned
+ above and almost all array opertions except some can be performed very
+ smoothly with named indexes. The problem arises when an array with named
+ indexes is asked for its length. When 'Array.prototype.length()' method is
+ referred it returns only the length of the array which has numberd index,
+ if we use named indexes then it is no good because the indexes are strings
+ but no longer numbers.
+
+ In such a case if we need to return the length of the named indexed array
+ then Object.keys(Arrayname).length would give the length of the array.The
+ same is explained by taking three variables 'len1', 'len2', 'len3' where
+ both 'len1', 'len3' store the lengths of a but 'len1' returns undefined
+ and 'len3' returns 3 as the length of the array.
+
 ------------------
 
 
