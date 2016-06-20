@@ -259,11 +259,83 @@ console.log(combine);
   not be put to use if the purpose is iterating over some elements.
 
 ------------------
+**2.14 Array**.reduce() :
+```javascript
+function combine(prev, curr) {
+        return prev + curr;
+}
 
+var arr1 = [1, 2, 3, 4, 5];
+var arr2 = ["one ", "two ", "three ", "four ", "five "];
+var numsum = arr1.reduce(combine);
+var worsum = arr2.reduce(combine);
+
+console.log(numsum); // it prints 15
+console.log(worsum); // it prints "one two three four five "
+```
+  **Array**.reduce() is a method which can be used with arrays by taking
+  a function as an argument, thereby making the function to iterate
+  over the array elements. Array.reduce() iterates over the array elements
+  and thus upon reaching the end of the Array yields a single value.
+
+  NOTE : Array.reduceRight() is more of similar to Array.reduce(), but
+  it iterates over the array elements from the rightmost element to the
+  leftmost element, instead of going  the usual way.
+
+------------------
 
 `TIPS[Arrays] :`
 
 - With the available list of the Array methods we can generally perform most of the operations, but if we require special methods or custom methods that must be part of the already existing Array Object then we define the method with by taking the concept of **Object.prototype**.
+
+------------------
+
+`MISC[Arrays] :`
+
+**Manipulating the Array Object by writing your own methods** :
+```javascript
+var boo = []
+
+Array.prototype.foo = function() {
+        console.log("We write our method inside this block")
+}
+
+boo.foo() // returns whatever is included inside the above mentioned code block
+```
+
+ Adding methods to Array.prototype essentially means that we are adding methods
+ to the global array object. So an Array.prototype would actually mean that adding
+ a new prototype to the existing Array object. So a better analogy can be explained
+ with the below code snippet.
+
+```javascript
+Array.prototype.union = function(bar) {
+        var l = this.length;
+        var n = bar.length;
+        for(i=0; i<n; ++i) {
+                this[l] = bar[i];
+                l++;
+        }
+        console.log(this);
+}
+
+var a = ["one", "two"];
+var b = ["three", "four", "five", "six", "seven"];
+var c = [1, 2];
+var d = [3, 4, 5, 6, 7];
+
+a.union(b);
+c.union(d);
+```
+ Observing the Above array prototype if we can carefully observe it is nothing
+ but a working replica of how the Array Method Array.prototype.concat() works. So
+ in concat() method another array is passed as an argument to the method and the
+ primary array concats and extends the array.
+
+ Things to lookup in the above example are how custom methods can be written in
+ order to suit the specific purpose to not only the Array prototype but also all
+ the Javscript recognized objects such as the String, Number, Regexp or the Object
+ itself.
 
 ------------------
 
