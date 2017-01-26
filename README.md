@@ -392,12 +392,23 @@ console.log(len3); // would display 3
 
 Methods which are part of Javascript **String** Object:
 
+- **String**.charAt(index);
+- **String**.concat(string1, string2, ...stringN);
 - **String**.indexOf("stringname");
 - **String**.lastIndexOf("stringname");
-- **String**.search("stringname");
+- **String**.link(url);
+- **String**.search(regExp);
 - **String**.slice(begin, end);
 - **String**.substring(begin, end);
 - **String**.substr(begin, end);
+- **String**.repeat(count);
+- **String**.replace(begin, end);
+- **String**.endsWith(string, position);
+- **String**.startsWith(string, position);
+- **String**.includes(string, position);
+- **String**.trim(begin, end);
+- **String**.toLowerCase();
+- **String**.toUpperCase();
 
 `TIPS[Strings]:`
 
@@ -503,6 +514,20 @@ Object.access.property = {
 
 ------------------
 
+
+##### 5. Functions:
+
+
+
+------------------
+
+##### 6. Conventions:
+
+
+
+------------------
+
+
 ##### 7. Closures:
 
 Function Closures in Javascript is all about how are the variables being treated and referred to in the local or global scope. In Js variables can be given :
@@ -513,6 +538,21 @@ Function Closures in Javascript is all about how are the variables being treated
 There is no inbuilt concept for something called private variables, so when there is a requirement for such a scenario Closures are written in Js in order to make scope for variables that are private in scope.
 
 ------------------
+
+##### 8. Currying :
+
+Currying is a process of building a function by taking multiple arguments and partially applying
+them through a series of functions. So to be specific, you can break down the given function that
+takes multiple arguments into series of functions that take part of the arguments.
+
+Let us take a common example :
+
+```javascript
+
+```
+
+------------------
+
 
 ##### 9. Tail Calls:
 
