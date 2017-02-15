@@ -99,7 +99,7 @@ Methods part of Javascript **Array** Object:
 - **Array**.push(),
 - **Array**.pop(),
 - **Array**.indexOf(),
-- **Array**.lastindexOf(),
+- **Array**.lastIndexOf(),
 - **Array**.concat(),
 - **Array**.splice(),
 - **Array**.shift(),
@@ -113,6 +113,12 @@ Methods part of Javascript **Array** Object:
 - **Array**.reduceRight(),
 - **Array**.join(),
 - **Array**.toString()
+- **Array**.fill()
+- **Array**.keys()
+- **Array**.slice()
+- **Array**.entries()
+- **Array**.includes()
+- **Array**.forEach()
 
 ------------------
 **2.1 Array**.push() :
@@ -138,6 +144,47 @@ console.log(arr1);  // it prints [1,2,3,4]
   of the array. So the method doesnot take arguments, Although if we try to
   pass arguments it would not take them. It performs only the basic operation
   of removing the last element of the Array.
+
+------------------
+**2.3 Array**.indexOf()
+```javascript
+var arr1 = ["akhil", "chandu", "adheeth", "varma"];
+var arr2 = ["akhil", "chandu", "adheeth", "varma", "akhil", "shankar", "akhil"];
+arr1.indexOf("akhil");         // returns 0 since akhil is present at index 0
+arr1.indexOf("adheeth");       // returns 2 since adheeth is present at index 2
+arr2.indexOf("akhil");         // returns 0 because it is the first occurrence of akhil
+```
+  **Array**.indexOf() is an accessor function that can be used for finding the
+  index of a specific element in an array. The argument to be passed to this is
+  the value of the element in the array. Also, it is to be noted that when there
+  are multiple occurrences of the same element in the data then the first occurrence
+  of the element in the array is displayed.
+
+------------------
+**2.4 Array**.lastIndexOf()
+```javascript
+var arr1 = ["akhil", "chandu", "adheeth", "varma", "akhil", "shankar", "akhil"];
+arr1.lastIndexOf("akhil");         // returns 6 since akhil last occurred at index 6
+arr1.lastIndexOf("adheeth");       // returns 2 since adheeth last occurred at index 2
+```
+  **Array**.lastIndexOf() is an accessor function, quite similar in behaviour to the
+  `indexOf` function. Although, the difference being `lastIndexOf` returns the index
+  of the last occurrence of the element in array.
+
+------------------
+**2.5 Array**.concat()
+```javascript
+var arr1 = ["akhil", "chandu"];
+var arr2 = ["adheeth", "varma", "kp"]
+var arr3 = []
+arr1.concat(arr2);         // returns [ 'akhil', 'chandu', 'adheeth', 'varma', 'kp' ]
+arr2.concat(arr1);         // returns [ 'adheeth', 'varma', 'kp', 'akhil', 'chandu' ]
+arr3 = arr1.concat(arr2)
+console.log(arr3)          // returns [ 'akhil', 'chandu', 'adheeth', 'varma', 'kp' ]
+```
+  **Array**.concat() is an accessor function used to create new arrays from existing
+  arrays. It takes an array as an argument and after the function is executed the array
+  in the argument gets concatenated to the array calling `concat()`.
 
 ------------------
 **2.6 Array**.splice() :
