@@ -13,6 +13,8 @@ the best out of the language.
 ##### So what are all covered in the cheatsheet ?
 
 - [Intro]()
+- [Sets]()
+- [Maps]()
 - [Arrays]()
 - [Strings]()
 - [Objects]()
@@ -456,6 +458,18 @@ Methods which are part of Javascript **String** Object:
 - **String**.trim(begin, end);
 - **String**.toLowerCase();
 - **String**.toUpperCase();
+
+------------------
+**2.1 String**.charAt() :
+```javascript
+var str1 = "akhil";
+str1.charAt(-1);        // returns '' or empty string
+str1.charAt(3);         // returns 'i' as it is located at position 3
+str1.charAt(7);         // returns '' or empty string
+```
+  **String**.charAt() is a method which can be used for determining the character present at a particular index of the given string. The function takes just one argument and it returns the character as output. It is to be noted that when the index given as input if either greater than or lesser than the string length then the function just returns `''` or an empty string as output.
+
+------------------
 
 `TIPS[Strings]:`
 
