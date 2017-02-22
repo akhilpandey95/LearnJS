@@ -13,8 +13,8 @@ the best out of the language.
 ##### So what are all covered in the cheatsheet ?
 
 - [Intro]()
-- [Sets]()
 - [Maps]()
+- [Sets]()
 - [Arrays]()
 - [Strings]()
 - [Objects]()
@@ -94,7 +94,45 @@ or without semicolons.
 
 ------------------
 
-##### 2. Arrays:
+##### 2. Maps:
+
+Methods part of Javascript **Maps** Object:
+
+- **Maps**.set(),
+- **Maps**.get(),
+- **Maps**.has(),
+- **Maps**.size(),
+- **Maps**.clear(),
+- **Maps**.delete(),
+- **Maps**.keys(),
+- **Maps**.values(),
+- **Maps**.entries(),
+
+`MISC[Maps] :` **WeakMaps**
+`MISC[Maps] :` Use of **...** operator
+
+------------------
+
+##### 3. Sets:
+
+Methods part of Javascript **Sets** Object:
+
+- **Sets**.add(),
+- **Sets**.has(),
+- **Sets**.size(),
+- **Sets**.clear(),
+- **Sets**.delete(),
+- **Sets**.keys(),
+- **Sets**.values(),
+- **Sets**.entries(),
+
+`MISC[Sets] :` **WeakSets**
+`MISC[Sets] :` Use of **...** operator
+
+
+------------------
+
+##### 4. Arrays:
 
 Methods part of Javascript **Array** Object:
 
@@ -123,7 +161,7 @@ Methods part of Javascript **Array** Object:
 - **Array**.forEach()
 
 ------------------
-**2.1 Array**.push() :
+**4.1 Array**.push() :
 ```javascript
 var arr1 = [1, 2, 3, 4, 5];
 arr1.push(6);
@@ -134,7 +172,7 @@ console.log(arr1); // it prints [1,2,3,4,5,6]
   and the mentioned element would be added as the last element in the array.
 
 ------------------
-**2.2 Array**.pop()
+**4.2 Array**.pop()
 ```javascript
 var arr1 = [1, 2, 3, 4, 5];
 arr1.pop();         // removes last element from the array
@@ -148,7 +186,7 @@ console.log(arr1);  // it prints [1,2,3,4]
   of removing the last element of the Array.
 
 ------------------
-**2.3 Array**.indexOf()
+**4.3 Array**.indexOf()
 ```javascript
 var arr1 = ["akhil", "chandu", "adheeth", "varma"];
 var arr2 = ["akhil", "chandu", "adheeth", "varma", "akhil", "shankar", "akhil"];
@@ -163,7 +201,7 @@ arr2.indexOf("akhil");         // returns 0 because it is the first occurrence o
   of the element in the array is displayed.
 
 ------------------
-**2.4 Array**.lastIndexOf()
+**4.4 Array**.lastIndexOf()
 ```javascript
 var arr1 = ["akhil", "chandu", "adheeth", "varma", "akhil", "shankar", "akhil"];
 arr1.lastIndexOf("akhil");         // returns 6 since akhil last occurred at index 6
@@ -174,7 +212,7 @@ arr1.lastIndexOf("adheeth");       // returns 2 since adheeth last occurred at i
   of the last occurrence of the element in array.
 
 ------------------
-**2.5 Array**.concat()
+**4.5 Array**.concat()
 ```javascript
 var arr1 = ["akhil", "chandu"];
 var arr2 = ["adheeth", "varma", "kp"]
@@ -189,7 +227,7 @@ console.log(arr3)          // returns [ 'akhil', 'chandu', 'adheeth', 'varma', '
   in the argument gets concatenated to the array calling `concat()`.
 
 ------------------
-**2.6 Array**.splice() :
+**4.6 Array**.splice() :
 ```javascript
 // case 1 :
 var arr1 = [1, 2, 3, 4, 5];
@@ -220,7 +258,7 @@ console.log(arr3); // it prints [1, 2, 3, 4, 5]
   specified would be the number of elements that will be removed.
 
 ------------------
-**2.7 Array**.shift() :
+**4.7 Array**.shift() :
 ```javascript
 var arr1 = [1, 2, 3, 4, 5, "akhil", "chandu", "varma", "kp", "adheeth"];
 arr1.shift();
@@ -235,7 +273,7 @@ console.log(arr1); // it prints [4,5,6,"akhil","chandu","varma","kp","adheeth"]
   though an argument is passed it continues to perform its operation.
 
 ------------------
-**2.8 Array**.unshift() :
+**4.8 Array**.unshift() :
 ```javascript
 var arr1 = [1, 2, 3, 4, 5];
 str = "akhil pandey";
@@ -254,7 +292,7 @@ console.log(arr1); // it prints ["akhil pandey", 1, 2, 3, 4, 5];
   of the Array.
 
 ------------------
-**2.9 Array**.reverse() :
+**4.9 Array**.reverse() :
 ```javascript
 var arr1 = [1, 'akhil', 'varma', 'chandu', 'adheeth'];
 arr1.reverse();
@@ -264,7 +302,7 @@ console.log(arr1); // it prints ['adheeth', 'chandu', 'varma', 'akhil', 1]
   reverse the order of elements in the array.
 
 ------------------
-**2.10 Array**.sort() :
+**4.10 Array**.sort() :
 ```javascript
 var arr1 = ['varma', 'chandu', 'akhil', 'adheeth'];
 var arr2 = [5, 6, 2, 9, 23];
@@ -280,7 +318,7 @@ console.log(arr2); // it prints [2, 5, 6, 9, 23]
   the alphabetical scale, the sorting takes place.
 
 ------------------
-**2.11 Array**.map() :
+**4.11 Array**.map() :
 ```javascript
 function add(arr) {
         return arr = "My name is " + arr;
@@ -308,7 +346,7 @@ console.log(combine);
   not be put to use if the purpose is iterating over some elements.
 
 ------------------
-**2.14 Array**.reduce() :
+**4.14 Array**.reduce() :
 ```javascript
 function combine(prev, curr) {
         return prev + curr;
@@ -437,7 +475,7 @@ console.log(len3); // would display 3
 ------------------
 
 
-##### 3. Strings:
+##### 5. Strings:
 
 Methods which are part of Javascript **String** Object:
 
@@ -460,7 +498,7 @@ Methods which are part of Javascript **String** Object:
 - **String**.toUpperCase();
 
 ------------------
-**2.1 String**.charAt() :
+**5.1 String**.charAt() :
 ```javascript
 var str1 = "akhil";
 str1.charAt(-1);        // returns '' or empty string
@@ -479,7 +517,7 @@ str1.charAt(7);         // returns '' or empty string
 
 ------------------
 
-##### 4. Objects:
+##### 6. Objects:
 
 In Javascript:
 
@@ -496,9 +534,9 @@ In Javascript:
 
 So basically except the primitive values all are objects in Javascript
 
-**4.1** `Objects can be created using three methods`:
+**6.1** `Objects can be created using three methods`:
 
-- **4.1.1** : "Define and create an object using an Object literal."
+- **6.1.1** : "Define and create an object using an Object literal."
 ```javascript
 // creating an oject using an Object literal
 var staff = {
@@ -508,7 +546,7 @@ var staff = {
 	age : 20
 };
 ```
-- **4.1.2** : "Define and create an object using an keyword new."
+- **6.1.2** : "Define and create an object using an keyword new."
 ```javascript
 // creating an object using new keyword
 var admin = new Object();
@@ -517,7 +555,7 @@ admin.department = "somedept";
 admin.userid = 123;
 admin.age = 20;
 ```
-- **4.1.3** : "Define an object constructor and then create objects of its type."
+- **6.1.3** : "Define an object constructor and then create objects of its type."
 ```javascript
 // creating an object using the object constructor
 function student(name, github_nick, url, age) {
@@ -528,25 +566,25 @@ function student(name, github_nick, url, age) {
 }
 ```
 
-**4.2** `Using the constructor for the above defined Object` :
+**6.2** `Using the constructor for the above defined Object` :
 ```javascript
 var akhil = new student("Akhil Pandey", "AkhilHector", "https://www.akhilhector.com", "20");
 ```
 
-**4.3** `Accessing object methods` :
+**6.3** `Accessing object methods` :
 ```javascript
 console.log(akhil.github);
 console.log(akhil.url);
 ```
 
-**4.4** `Using the prototype property` :
+**6.4** `Using the prototype property` :
 ```javascript
 student.prototype.show = function() {
 	return this.name + " " + this.github + " " + this.age;
 }
 ```
 
-**4.5** `Adding methods to the prototype` :
+**6.5** `Adding methods to the prototype` :
 ```javascript
 function student(name, github_nick, url, age) {
 	this.name = name;
@@ -576,20 +614,20 @@ Object.access.property = {
 ------------------
 
 
-##### 5. Functions:
+##### 7. Functions:
 
 
 
 ------------------
 
-##### 6. Conventions:
+##### 8. Conventions:
 
 
 
 ------------------
 
 
-##### 7. Closures:
+##### 9. Closures:
 
 Function Closures in Javascript is all about how are the variables being treated and referred to in the local or global scope. In Js variables can be given :
 
@@ -600,7 +638,7 @@ There is no inbuilt concept for something called private variables, so when ther
 
 ------------------
 
-##### 8. Currying :
+##### 10. Currying :
 
 Currying is a process of building a function by taking multiple arguments and partially applying
 them through a series of functions. So to be specific, you can break down the given function that
@@ -615,7 +653,7 @@ Let us take a common example :
 ------------------
 
 
-##### 9. Tail Calls:
+##### 11. Tail Calls:
 
 Tail calls are nothing but essentially replacing the concept of recursive
 functions with loop. In a way this can not only save time but also saves
