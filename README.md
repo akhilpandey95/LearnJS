@@ -12,17 +12,17 @@ the best out of the language.
 
 ##### So what are all covered in the cheatsheet ?
 
-- [Intro]()
-- [Maps]()
-- [Sets]()
-- [Arrays]()
-- [Strings]()
-- [Objects]()
-- [Functions]()
-- [Conventions]()
-- [Closures]()
-- [Currying]()
-- [Tails Calls]()
+- [Intro](#intro)
+- [Maps](#maps)
+- [Sets](#sets)
+- [Arrays](#arrays)
+- [Strings](#strings)
+- [Objects](#objects)
+- [Functions](#functions)
+- [Conventions](#onventions)
+- [Closures](#closures)
+- [Currying](#currying)
+- [Tails Calls](#tail-calls)
 
 ------------------
 
@@ -508,7 +508,16 @@ str1.charAt(7);         // returns '' or empty string
   **String**.charAt() is a method which can be used for determining the character present at a particular index of the given string. The function takes just one argument and it returns the character as output. It is to be noted that when the index given as input if either greater than or lesser than the string length then the function just returns `''` or an empty string as output.
 
 ------------------
+**5.2 String**.concat() :
 
+------------------
+**5.3 String**.indexOf() :
+
+------------------
+**5.4 String**.lastIndexOf() :
+
+
+------------------
 `TIPS[Strings]:`
 
 - **string.slice()** : The method **string.slice()** essentially extracts part of a string and returns the new string which is sliced. The general notation for using the string.slice method is string.slice(pos1, pos2) where in pos1 is the position of the starting index and pos2 is the position of ending index. The point to be noted here is if we use the string.slice() method by passing negative parameters then it ends up counting and extracting the string from the end to the start. And if we donot pass the second parameter the method extracts the rest of the string.
