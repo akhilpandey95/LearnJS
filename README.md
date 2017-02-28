@@ -159,6 +159,8 @@ Methods part of Javascript **Array** Object:
 - **Array**.entries()
 - **Array**.includes()
 - **Array**.forEach()
+- **Array**.of()
+- **Array**.from()
 
 ------------------
 **4.1 Array**.push() :
@@ -509,6 +511,19 @@ str1.charAt(7);         // returns '' or empty string
 
 ------------------
 **5.2 String**.concat() :
+```javascript
+var str1 = "akhil";
+var str2 = "pandey";
+str1.concat(str2);                    // returns the string 'akhilpandey'
+str1.concat(1234);                    // returns the string 'akhil1234'
+str1.concat(true);                    // returns the string 'akhiltrue'
+str1.concat(null);                    // returns the string 'akhilnull'
+str1.concat(undefined);               // returns the string 'akhilundefined'
+str1.concat([1, 2, 3, 4, 5]);         // returns the string 'akhil1,2,3,4,5'
+str1.concat(" ", 12, 34, 56, 78);     // returns the string 'akhil 12345678'
+str1.concat({a: "123", b: "456"});    // returns the string 'akhil[object Object]'
+```
+  **String**.concat() is a method.
 
 ------------------
 **5.3 String**.indexOf() :
