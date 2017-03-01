@@ -523,13 +523,28 @@ str1.concat([1, 2, 3, 4, 5]);         // returns the string 'akhil1,2,3,4,5'
 str1.concat(" ", 12, 34, 56, 78);     // returns the string 'akhil 12345678'
 str1.concat({a: "123", b: "456"});    // returns the string 'akhil[object Object]'
 ```
-  **String**.concat() is a method.
+  **String**.concat() is a method which is used to combined two or more strings
+  in order return a new string. Fundamentally this method is used for string
+  operations, but if a string is typically concatenated with another type then
+  the resultant will be a string. If we observe above example we see `str1.concat(true)` so here the resultant string is `akhiltrue` as **String**.concat() combines the value of both the arguments and produces a concatenated string as end result. Now there are even special cases where if a `string` is tried to concatenate with falsy values then the result would be the combination of the `string` and falsy value.
 
 ------------------
 **5.3 String**.indexOf() :
 
 ------------------
 **5.4 String**.lastIndexOf() :
+
+
+------------------
+**5.5 String**.link() :
+
+
+------------------
+**5.6 String**.search() :
+
+
+------------------
+**5.4 String**.slice() :
 
 
 ------------------
