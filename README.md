@@ -106,7 +106,73 @@ Methods part of Javascript **Maps** Object:
 - **Maps**.delete(),
 - **Maps**.keys(),
 - **Maps**.values(),
-- **Maps**.entries(),
+- **Maps**.entries()
+
+------------------
+**2.1 Maps**.set() :
+```javascript
+var m1 = new Map()
+```
+**Maps**.set() is .
+
+------------------
+**2.2 Maps**.get() :
+```javascript
+var m1 = new Map()
+```
+**Maps**.get() is .
+
+------------------
+**2.3 Maps**.has() :
+```javascript
+var m1 = new Map()
+```
+**Maps**.has() is .
+
+------------------
+**2.4 Maps**.size() :
+```javascript
+var m1 = new Map()
+```
+**Maps**.size() is .
+
+------------------
+**2.5 Maps**.clear() :
+```javascript
+var m1 = new Map()
+```
+**Maps**.clear() is .
+
+------------------
+**2.6 Maps**.delete() :
+```javascript
+var m1 = new Map()
+```
+**Maps**.delete() is .
+
+------------------
+**2.7 Maps**.keys() :
+```javascript
+var m1 = new Map()
+```
+**Maps**.keys() is .
+
+------------------
+**2.8 Maps**.values() :
+```javascript
+var m1 = new Map()
+```
+**Maps**.values() is .
+
+------------------
+**2.9 Maps**.entries() :
+```javascript
+var m1 = new Map()
+```
+**Maps**.entries() is .
+
+------------------
+
 
 `MISC[Maps] :` **WeakMaps**
 `MISC[Maps] :` Use of **...** operator
@@ -124,7 +190,66 @@ Methods part of Javascript **Sets** Object:
 - **Sets**.delete(),
 - **Sets**.keys(),
 - **Sets**.values(),
-- **Sets**.entries(),
+- **Sets**.entries()
+
+------------------
+**3.1 Sets**.add() :
+```javascript
+var s1 = new Sets()
+```
+**Sets**.add() is .
+
+------------------
+**3.2 Sets**.has() :
+```javascript
+var s1 = new Sets()
+```
+**Sets**.has() is .
+
+------------------
+**3.3 Sets**.size() :
+```javascript
+var s1 = new Sets()
+```
+**Sets**.size() is .
+
+------------------
+**3.4 Sets**.clear() :
+```javascript
+var s1 = new Sets()
+```
+**Sets**.clear() is .
+
+------------------
+**3.5 Sets**.delete() :
+```javascript
+var s1 = new Sets()
+```
+**Sets**.delete() is .
+
+------------------
+**3.6 Sets**.keys() :
+```javascript
+var s1 = new Sets()
+```
+**Sets**.keys() is .
+
+------------------
+**3.7 Sets**.values() :
+```javascript
+var s1 = new Sets()
+```
+**Sets**.values() is .
+
+------------------
+**3.8 Sets**.entries() :
+```javascript
+var s1 = new Sets()
+```
+**Sets**.entries() is .
+
+------------------
+
 
 `MISC[Sets] :` **WeakSets**
 `MISC[Sets] :` Use of **...** operator
