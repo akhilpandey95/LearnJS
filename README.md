@@ -2,7 +2,7 @@
 
 ##### Ok, so what is this ?
 
-> `LearnJs` is an attempt to portray the best parts of Javasript that are
+> `LearnJs` is an attempt to portray the best parts of Javascript that are
 pretty tough and hard to find. It is to be noted that this is not a book/guide
 in any form, but a congregation of best practices, language constructs, and other
 simple yet effective snippets that gives us an essence of how we can harness
@@ -101,7 +101,7 @@ Methods part of Javascript **Maps** Object:
 - **Maps**.set(),
 - **Maps**.get(),
 - **Maps**.has(),
-- **Maps**.size(),
+- **Maps**.size,
 - **Maps**.clear(),
 - **Maps**.delete(),
 - **Maps**.keys(),
@@ -111,30 +111,71 @@ Methods part of Javascript **Maps** Object:
 ------------------
 **2.1 Maps**.set() :
 ```javascript
-var m1 = new Map()
+let m1 = new Map();
+let x = {id: 1},
+    y = {id: 2};
+
+m1.set(x, "foo");               // Map { { id: 1 } => 'foo' }
+m1.set(y, "bar");               // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' }
+m1.set("name", "akhil pandey")  //Map { { id: 1 } => 'foo', { id: 2 } => 'bar', 'name' => 'akhil pandey' }
+
 ```
-**Maps**.set() is .
+**Maps**.set() is method which is used to add or update an element with a
+specific key and value in a map. Here the first argument is the key whilst
+the second argument is the value. The keys can be of any type but it would
+be preferable to use `objects` as keys instead of `strings` because if we
+use `strings` as keys there wouldn't be any significant difference between
+`Maps` and `Objects`.
 
 ------------------
 **2.2 Maps**.get() :
 ```javascript
 var m1 = new Map()
+let x = {id: 1},
+    y = {id: 2};
+
+m1.set(x, "foo");   // Map { { id: 1 } => 'foo' }
+m1.set(y, "bar");   // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' }
+
+m1.get(x);          //returns 'foo'
 ```
-**Maps**.get() is .
+**Maps**.get() is a method which is used to retrieve an element from the `Map`
+object with a specific key. So the key is passed as an argument and the element associated with that key is returned. If no key is passed as an argument then
+the method returns with `undefined`.
 
 ------------------
 **2.3 Maps**.has() :
 ```javascript
 var m1 = new Map()
+let x = {id: 1},
+    y = {id: 2};
+
+m1.set(x, "foo");   // Map { { id: 1 } => 'foo' }
+m1.set(y, "bar");   // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' }
+
+m1.has(x)           // returns true
+m1.has("akhil")     // returns false
 ```
-**Maps**.has() is .
+**Maps**.has() is a method which indicates if an element with the requested key
+is present in the map or not. The method takes only one argument which is the
+key and it returns a `true` if the element is present or `false` if the element
+is not present.
 
 ------------------
 **2.4 Maps**.size() :
 ```javascript
 var m1 = new Map()
+let x = {id: 1},
+    y = {id: 2};
+
+m1.set(x, "foo");   // Map { { id: 1 } => 'foo' }
+m1.set(y, "bar");   // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' }
+
+m1.size;
 ```
-**Maps**.size() is .
+**Maps**.size is an accessor property that returns the number of elements present
+in the `Map` object. Since it is an accessor property we shouldn't call/use this
+like a method, So if `m1.size()` is called then it throws a TypeError saying `m1.size` is not a function. Therefore the valid call to that property is `m1.size`. 
 
 ------------------
 **2.5 Maps**.clear() :
