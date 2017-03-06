@@ -96,20 +96,20 @@ or without semicolons.
 
 ##### 2. Maps:
 
-Methods part of Javascript **Maps** Object:
+Methods part of Javascript **Map** Object:
 
-- **Maps**.set(),
-- **Maps**.get(),
-- **Maps**.has(),
-- **Maps**.size,
-- **Maps**.clear(),
-- **Maps**.delete(),
-- **Maps**.keys(),
-- **Maps**.values(),
-- **Maps**.entries()
+- **Map**.set(),
+- **Map**.get(),
+- **Map**.has(),
+- **Map**.size,
+- **Map**.clear(),
+- **Map**.delete(),
+- **Map**.keys(),
+- **Map**.values(),
+- **Map**.entries()
 
 ------------------
-**2.1 Maps**.set() :
+**2.1 Map**.set() :
 ```javascript
 let m1 = new Map();
 let x = {id: 1},
@@ -120,7 +120,7 @@ m1.set(y, "bar");               // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' 
 m1.set("name", "akhil pandey")  //Map { { id: 1 } => 'foo', { id: 2 } => 'bar', 'name' => 'akhil pandey' }
 
 ```
-**Maps**.set() is method which is used to add or update an element with a
+**Map**.set() is method which is used to add or update an element with a
 specific key and value in a map. Here the first argument is the key whilst
 the second argument is the value. The keys can be of any type but it would
 be preferable to use `objects` as keys instead of `strings` because if we
@@ -128,7 +128,7 @@ use `strings` as keys there wouldn't be any significant difference between
 `Maps` and `Objects`.
 
 ------------------
-**2.2 Maps**.get() :
+**2.2 Map**.get() :
 ```javascript
 var m1 = new Map();
 let x = {id: 1},
@@ -139,12 +139,12 @@ m1.set(y, "bar");   // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' }
 
 m1.get(x);          //returns 'foo'
 ```
-**Maps**.get() is a method which is used to retrieve an element from the `Map`
+**Map**.get() is a method which is used to retrieve an element from the `Map`
 object with a specific key. So the key is passed as an argument and the element associated with that key is returned. If no key is passed as an argument then
 the method returns with `undefined`.
 
 ------------------
-**2.3 Maps**.has() :
+**2.3 Map**.has() :
 ```javascript
 var m1 = new Map();
 let x = {id: 1},
@@ -156,13 +156,13 @@ m1.set(y, "bar");   // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' }
 m1.has(x)           // returns true
 m1.has("akhil")     // retuqrns false
 ```
-**Maps**.has() is a method which indicates if an element with the requested key
+**Map**.has() is a method which indicates if an element with the requested key
 is present in the map or not. The method takes only one argument which is the
 key and it returns a `true` if the element is present or `false` if the element
 is not present.
 
 ------------------
-**2.4 Maps**.size :
+**2.4 Map**.size :
 ```javascript
 var m1 = new Map();
 let x = {id: 1},
@@ -173,12 +173,12 @@ m1.set(y, "bar");   // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' }
 
 m1.size;
 ```
-**Maps**.size is an accessor property that returns the number of elements present
+**Map**.size is an accessor property that returns the number of elements present
 in the `Map` object. Since it is an accessor property we shouldn't call/use this
 like a method, So if `m1.size()` is called then it throws a TypeError saying `m1.size` is not a function. Therefore the valid call to that property is `m1.size`.
 
 ------------------
-**2.5 Maps**.clear() :
+**2.5 Map**.clear() :
 ```javascript
 var m1 = new Map();
 let x = {id: 1},
@@ -191,11 +191,11 @@ m1.has(x);         // returns true
 m1.clear();
 m1.has(x);         // returns false
 ```
-**Maps**.clear() is a method which clears/removes all the elements that are present
+**Map**.clear() is a method which clears/removes all the elements that are present
 in the `Map` object. The method doesn't take any arguments but throws `undefined` in return.
 
 ------------------
-**2.6 Maps**.delete() :
+**2.6 Map**.delete() :
 ```javascript
 var m1 = new Map();
 let x = {id: 1},
@@ -209,31 +209,31 @@ m1.delete(x);           // returns true
 m1.delete("something"); // returns false
 m1.has(x);              // returns false
 ```
-**Maps**.delete() is method which is used for deleting a particular element
+**Map**.delete() is method which is used for deleting a particular element
 from the `Map` object. The method takes only one argument which is the key and
 if the key is present in the `Map` it deletes the element and returns a `true`,
 but if the key isn't present in the `Map` then it throws a `false`.
 
 ------------------
-**2.7 Maps**.keys() :
+**2.7 Map**.keys() :
 ```javascript
 var m1 = new Map()
 ```
-**Maps**.keys() is .
+**Map**.keys() is .
 
 ------------------
-**2.8 Maps**.values() :
+**2.8 Map**.values() :
 ```javascript
 var m1 = new Map()
 ```
-**Maps**.values() is .
+**Map**.values() is .
 
 ------------------
-**2.9 Maps**.entries() :
+**2.9 Map**.entries() :
 ```javascript
 var m1 = new Map()
 ```
-**Maps**.entries() is .
+**Map**.entries() is .
 
 ------------------
 
@@ -246,72 +246,72 @@ var m1 = new Map()
 
 ##### 3. Sets:
 
-Methods part of Javascript **Sets** Object:
+Methods part of Javascript **Set** Object:
 
-- **Sets**.add(),
-- **Sets**.has(),
-- **Sets**.size(),
-- **Sets**.clear(),
-- **Sets**.delete(),
-- **Sets**.keys(),
-- **Sets**.values(),
-- **Sets**.entries()
-
-------------------
-**3.1 Sets**.add() :
-```javascript
-var s1 = new Sets()
-```
-**Sets**.add() is .
+- **Set**.add(),
+- **Set**.has(),
+- **Set**.size,
+- **Set**.clear(),
+- **Set**.delete(),
+- **Set**.keys(),
+- **Set**.values(),
+- **Set**.entries()
 
 ------------------
-**3.2 Sets**.has() :
+**3.1 Set**.add() :
 ```javascript
-var s1 = new Sets()
+var s1 = new Set()
 ```
-**Sets**.has() is .
+**Set**.add() is .
 
 ------------------
-**3.3 Sets**.size() :
+**3.2 Set**.has() :
 ```javascript
-var s1 = new Sets()
+var s1 = new Set()
 ```
-**Sets**.size() is .
+**Set**.has() is .
 
 ------------------
-**3.4 Sets**.clear() :
+**3.3 Set**.size :
 ```javascript
-var s1 = new Sets()
+var s1 = new Set()
 ```
-**Sets**.clear() is .
+**Set**.size is .
 
 ------------------
-**3.5 Sets**.delete() :
+**3.4 Set**.clear() :
 ```javascript
-var s1 = new Sets()
+var s1 = new Set()
 ```
-**Sets**.delete() is .
+**Set**.clear() is .
 
 ------------------
-**3.6 Sets**.keys() :
+**3.5 Set**.delete() :
 ```javascript
-var s1 = new Sets()
+var s1 = new Set()
 ```
-**Sets**.keys() is .
+**Set**.delete() is .
 
 ------------------
-**3.7 Sets**.values() :
+**3.6 Set**.keys() :
 ```javascript
-var s1 = new Sets()
+var s1 = new Set()
 ```
-**Sets**.values() is .
+**Set**.keys() is .
 
 ------------------
-**3.8 Sets**.entries() :
+**3.7 Set**.values() :
 ```javascript
-var s1 = new Sets()
+var s1 = new Set()
 ```
-**Sets**.entries() is .
+**Set**.values() is .
+
+------------------
+**3.8 Set**.entries() :
+```javascript
+var s1 = new Set()
+```
+**Set**.entries() is .
 
 ------------------
 
