@@ -130,7 +130,7 @@ use `strings` as keys there wouldn't be any significant difference between
 ------------------
 **2.2 Maps**.get() :
 ```javascript
-var m1 = new Map()
+var m1 = new Map();
 let x = {id: 1},
     y = {id: 2};
 
@@ -146,7 +146,7 @@ the method returns with `undefined`.
 ------------------
 **2.3 Maps**.has() :
 ```javascript
-var m1 = new Map()
+var m1 = new Map();
 let x = {id: 1},
     y = {id: 2};
 
@@ -154,7 +154,7 @@ m1.set(x, "foo");   // Map { { id: 1 } => 'foo' }
 m1.set(y, "bar");   // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' }
 
 m1.has(x)           // returns true
-m1.has("akhil")     // returns false
+m1.has("akhil")     // retuqrns false
 ```
 **Maps**.has() is a method which indicates if an element with the requested key
 is present in the map or not. The method takes only one argument which is the
@@ -162,9 +162,9 @@ key and it returns a `true` if the element is present or `false` if the element
 is not present.
 
 ------------------
-**2.4 Maps**.size() :
+**2.4 Maps**.size :
 ```javascript
-var m1 = new Map()
+var m1 = new Map();
 let x = {id: 1},
     y = {id: 2};
 
@@ -175,21 +175,44 @@ m1.size;
 ```
 **Maps**.size is an accessor property that returns the number of elements present
 in the `Map` object. Since it is an accessor property we shouldn't call/use this
-like a method, So if `m1.size()` is called then it throws a TypeError saying `m1.size` is not a function. Therefore the valid call to that property is `m1.size`. 
+like a method, So if `m1.size()` is called then it throws a TypeError saying `m1.size` is not a function. Therefore the valid call to that property is `m1.size`.
 
 ------------------
 **2.5 Maps**.clear() :
 ```javascript
-var m1 = new Map()
+var m1 = new Map();
+let x = {id: 1},
+    y = {id: 2};
+
+m1.set(x, "foo");   // Map { { id: 1 } => 'foo' }
+m1.set(y, "bar");   // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' }
+
+m1.has(x);         // returns true
+m1.clear();
+m1.has(x);         // returns false
 ```
-**Maps**.clear() is .
+**Maps**.clear() is a method which clears/removes all the elements that are present
+in the `Map` object. The method doesn't take any arguments but throws `undefined` in return.
 
 ------------------
 **2.6 Maps**.delete() :
 ```javascript
-var m1 = new Map()
+var m1 = new Map();
+let x = {id: 1},
+    y = {id: 2};
+
+m1.set(x, "foo");   // Map { { id: 1 } => 'foo' }
+m1.set(y, "bar");   // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' }
+
+m1.has(x);              // returns true
+m1.delete(x);           // returns true
+m1.delete("something"); // returns false
+m1.has(x);              // returns false
 ```
-**Maps**.delete() is .
+**Maps**.delete() is method which is used for deleting a particular element
+from the `Map` object. The method takes only one argument which is the key and
+if the key is present in the `Map` it deletes the element and returns a `true`,
+but if the key isn't present in the `Map` then it throws a `false`.
 
 ------------------
 **2.7 Maps**.keys() :
@@ -216,6 +239,7 @@ var m1 = new Map()
 
 
 `MISC[Maps] :` **WeakMaps**
+
 `MISC[Maps] :` Use of **...** operator
 
 ------------------
@@ -293,6 +317,7 @@ var s1 = new Sets()
 
 
 `MISC[Sets] :` **WeakSets**
+
 `MISC[Sets] :` Use of **...** operator
 
 
