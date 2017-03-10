@@ -217,16 +217,56 @@ but if the key isn't present in the `Map` then it throws a `false`.
 ------------------
 **2.7 Map**.keys() :
 ```javascript
-var m1 = new Map()
+var m1 = new Map();
+let x = {id: 1},
+    y = {id: 2};
+
+m1.set(x, "foo");                   // Map { { id: 1 } => 'foo' }
+m1.set(y, "bar");                   // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' }
+
+m1.keys();                          // MapIterator { { id: 1 }, { id: 2 } }
+
+let iterator = m1.keys();
+console.log(iterator.next().value); // { id: 1 }
+console.log(iterator.next().value); // { id: 2 }
+console.log(iterator.next().value); // undefined
 ```
-**Map**.keys() is .
+**Map**.keys() is a method which is used to return the keys present in the `Map`
+object for each element. The method returns an Map **Iterator** object which can
+be used for knowing the keys present in the `Map`. In the above example it is
+outlined how to iterate over **Map**.keys() using `next()`. It is to be noted
+that when `next()` is used on the **Iterator** object either `value` or `done`
+must be used because a straight forward usage of `next()` results in displaying
+an `Object`. `iterator.next().value` returns the value of the key present in the
+**Iterator** object while `iterator.next().done` returns a boolean saying `false`
+if there are more keys present in the **Iterator** object and `true` if there
+aren't any more keys present.
 
 ------------------
 **2.8 Map**.values() :
 ```javascript
-var m1 = new Map()
+var m1 = new Map();
+let x = {id: 1},
+    y = {id: 2};
+
+m1.set(x, "foo");                   // Map { { id: 1 } => 'foo' }
+m1.set(y, "bar");                   // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' }
+
+m1.values();                        // MapIterator { 'foo', 'bar' }
+
+let iterator = m1.values();
+console.log(iterator.next().value); // foo
+console.log(iterator.next().value); // bar
+console.log(iterator.next().value); // undefined
 ```
-**Map**.values() is .
+**Map**.values() is a method which is used to return the values present in the `Map`
+object for each element. The method returns an **Iterator** object which can be used
+for knowing the values present in the `Map`. In the above example it is outlined how
+to iterate over **Map**.values() using `next()`. It is to be noted that when `next()`
+is used on the **Iterator** object either `value` or `done` must be used because a
+straight forward usage of `next()` results in displaying an `Object`. `iterator.next().value` returns the value of a particular element present in the **Iterator** object while `iterator.next().done` returns a boolean saying `false`
+if there are more values present in the **Iterator** object and `true` if there aren't
+any more values present.
 
 ------------------
 **2.9 Map**.entries() :
