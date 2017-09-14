@@ -271,14 +271,32 @@ any more values present.
 ------------------
 **2.9 Map**.entries() :
 ```javascript
-var m1 = new Map()
+var m1 = new Map();
+let x = {id: 1},
+    y = {id: 2};
+
+m1.set(x, "foo");                   // Map { { id: 1 } => 'foo' }
+m1.set(y, "bar");                   // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' }
+
+m1.entries();                       // MapIterator { [ { id: 1 }, 'foo' ], [ { id: 2 }, 'bar' ] }
+
+let iterator = m1.values();
+console.log(iterator.next().value); // [ { id: 1 }, 'foo' ]
+console.log(iterator.next().value); // [ { id: 2 }, 'bar' ]
+console.log(iterator.next().value); // undefined
 ```
-**Map**.entries() is .
+**Map**.entries() is a method which is sued to return the keys and values present in
+the `Map` object for each element. The method is quite similar to **Map**.values() for
+the fact that it returns an **Iterator** object that could be used to know the keys and
+values present in the `Map`. In the above example it is showcased as to how to iterate
+over the **Map**.entries() using `next()`. The method's ability and its way of operation
+is quite similar to **Map**.values() except for the fact that keys are also returned along
+with the values as we iterate over the **Iterator** object. Similar to any **Iterator**
+object once it reaches the end of its plane it would throw and `undefined`. Also, it is
+to be noted that any other method that applies to an **Iterator** object could be used
+with this since it is one and the same.
 
 ------------------
-
-
-`MISC[Maps] :` **WeakMaps**
 
 `MISC[Maps] :` Use of **...** operator
 
