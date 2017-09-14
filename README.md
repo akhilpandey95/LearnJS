@@ -317,6 +317,7 @@ m1.get(y);                          // 'bar'm1.
 It is to be noted that although the way **WeakMaps** API interacts with us the same way as
 the **Maps** object does, there are limitations to the operations provided by the **WeakMaps**
 API. It supports `get()`, `set()`, `has()` and `delete()` methods as of now.
+
 ------------------
 
 `MISC[Maps] :` Use of **...** operator
