@@ -756,8 +756,8 @@ Methods which are part of Javascript **String** Object:
 - **String**.concat(string1, string2, ...stringN);
 - **String**.indexOf("stringname");
 - **String**.lastIndexOf("stringname");
-- **String**.link(url);
 - **String**.search(regExp);
+- **String**.split(string, delimiter)
 - **String**.slice(begin, end);
 - **String**.substring(begin, end);
 - **String**.substr(begin, end);
@@ -794,28 +794,54 @@ str1.concat([1, 2, 3, 4, 5]);         // returns the string 'akhil1,2,3,4,5'
 str1.concat(" ", 12, 34, 56, 78);     // returns the string 'akhil 12345678'
 str1.concat({a: "123", b: "456"});    // returns the string 'akhil[object Object]'
 ```
-  **String**.concat() is a method which is used to combined two or more strings
-  in order return a new string. Fundamentally this method is used for string
+  **String**.concat() is a method which is used to combined two or more string  in order return a new string. Fundamentally this method is used for string
   operations, but if a string is typically concatenated with another type then
   the resultant will be a string. If we observe above example we see `str1.concat(true)` so here the resultant string is `akhiltrue` as **String**.concat() combines the value of both the arguments and produces a concatenated string as end result. Now there are even special cases for suppose, if a `string` is tried to concatenate with falsy values then the result would be the combination of the `string` and falsy value.
 
 ------------------
 **5.3 String**.indexOf() :
+```javascript
+var str1 = "akhil";
+var str2 = "pandey";
+
+str1.indexOf("a");                     // returns the value 0
+str1.indexOf("k");                     // returns the value 1
+str2.indexOf("n");                     // returns the value 2
+
+str1.indexOf("hi");                    // returns the value 2
+str2.indexOf("ey");                    // returns the value 4
+str1.indexOf("akhi");                  // returns the value 0
+```
+**String**.indexOf() is a method which returns the index of a given character
+in a string. The value that is being returned is numeric and if the method returns a value of `-1` it means that the requested substring or character is not found in the main string. Also, this method is typically used for knowing
+the index of particular character rather than a string. If a substring of length greater than `1` is given as input then it would just return the index of the first character in that particular substring. So, it would not be feasible to employ this method when you search for substrings having more than one character. The above code snippet portrays properly how would **String**.indexOf() return values if a single character is given as input as and when compared to more than one character.
 
 ------------------
 **5.4 String**.lastIndexOf() :
+```javascript
+var str1 = "Marshmallow";
+var str2 = "palladium";
+
+str1.lastIndexOf("m");                     // returns the value 5
+str1.lastIndexOf("a");                     // returns the value 6
+str2.lastIndexOf("l");                     // returns the value 3
+
+str2.lastIndexOf("ad");                    // returns the value 4
+str1.lastIndexOf("mal");                   // returns the value 5
+str1.lastIndexOf("ow");                    // returns the value 9
+```
+**String**.lastIndexOf() is a method that returns the index of the last occurrence of a given character in a string. The value that is being returned is numeric and if the method returns a value of `-1` it means that the requested substring or character is not found in the main string. This method is quite similar in operational style as and when compared to **String**.indexOf() while the only significant difference being the position of index that is being returned. Ideally, this method is very useful to locate the last index of characters in a string that has multiple occurrences of a single character. In the code snippet demonstrated above, it is clearly visible as to how would **String**.lastIndexOf() would be helpful in finding last index of given character in a string. Similar to **String**.indexOf() if more than one character/substring is given as input then the result that would pipe out will only take the first character into consideration.
+
+------------------
+**5.5 String**.search() :
 
 
 ------------------
-**5.5 String**.link() :
+**5.6 String**.split() :
 
 
 ------------------
-**5.6 String**.search() :
-
-
-------------------
-**5.4 String**.slice() :
+**5.7 String**.slice() :
 
 
 ------------------
