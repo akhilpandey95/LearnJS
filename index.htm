@@ -49,21 +49,21 @@
       <section id="main_content">
         <h1 id="learnjs" class="header-level-1">LearnJS</h1>
 
-<h5 id="ok-so-what-is-this-" class="header-level-2">Ok, so what is this ?</h5>
+ <h5 id="ok-so-what-is-this-" class="header-level-2">Ok, so what is this ?</h5>
 
-<blockquote>
+ <blockquote>
   <p><code class="highlighter-rouge">LearnJs</code> is an attempt to portray the best parts of Javascript that are
-pretty tough and hard to find. It is to be noted that this is not a book/guide
-in any form, but a congregation of best practices, language constructs, and other
-simple yet effective snippets that gives us an essence of how we can harness
-the best out of the language.</p>
-</blockquote>
+ pretty tough and hard to find. It is to be noted that this is not a book/guide
+ in any form, but a congregation of best practices, language constructs, and other
+ simple yet effective snippets that gives us an essence of how we can harness
+ the best out of the language.</p>
+ </blockquote>
 
-<hr>
+ <hr>
 
-<h5 id="so-what-are-all-covered-in-the-cheatsheet-" class="header-level-2">So what are all covered in the cheatsheet ?</h5>
+ <h5 id="so-what-are-all-covered-in-the-cheatsheet-" class="header-level-2">So what are all covered in the cheatsheet ?</h5>
 
-<ul>
+ <ul>
   <li><a href="#intro">Intro</a></li>
   <li><a href="#maps">Maps</a></li>
   <li><a href="#sets">Sets</a></li>
@@ -75,83 +75,83 @@ the best out of the language.</p>
   <li><a href="#closures">Closures</a></li>
   <li><a href="#currying">Currying</a></li>
   <li><a href="#tail-calls">Tails Calls</a></li>
-</ul>
+ </ul>
 
-<hr>
+ <hr>
 
-<h5 id="1-intro" class="header-level-2">1. Intro:</h5>
+ <h5 id="1-intro" class="header-level-2">1. Intro:</h5>
 
-<p><code class="highlighter-rouge">1.1 Declarations</code>:</p>
+ <p><code class="highlighter-rouge">1.1 Declarations</code>:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
-<span class="c1">// bad</span>
-<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Number</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">boo</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Boolean</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">reg</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">fun</span> <span class="o">=</span> <span class="k">new</span> <span class="kd">function</span><span class="p">();</span>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+ <span class="c1">// bad</span>
+ <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+ <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">();</span>
+ <span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Number</span><span class="p">();</span>
+ <span class="kd">var</span> <span class="nx">boo</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Boolean</span><span class="p">();</span>
+ <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+ <span class="kd">var</span> <span class="nx">reg</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">();</span>
+ <span class="kd">var</span> <span class="nx">fun</span> <span class="o">=</span> <span class="k">new</span> <span class="kd">function</span><span class="p">();</span>
 
-<span class="c1">// good</span>
-<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[],</span>
+ <span class="c1">// good</span>
+ <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[],</span>
     <span class="nx">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
     <span class="nx">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
     <span class="nx">boo</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
     <span class="nx">obj</span> <span class="o">=</span> <span class="p">{},</span>
     <span class="nx">reg</span> <span class="o">=</span> <span class="sr">/</span><span class="se">()</span><span class="sr">/</span><span class="p">,</span>
     <span class="nx">fun</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){};</span>
-</code></pre>
-</div>
+ </code></pre>
+ </div>
 
-<p>We have to understand the fact that in Javascript everything is an object,
-so for suppose if we declare a string using the <code class="highlighter-rouge">String</code> object and compare
-it with <code class="highlighter-rouge">var a = ""</code> then the outcome of the comparision would be false. This
-is simply because if we declare a string using the <code class="highlighter-rouge">bad</code> way and compare it
-with a string declared using the <code class="highlighter-rouge">good</code> way then fundamentally we are comparing
-a string with an Object(String).</p>
+ <p>We have to understand the fact that in Javascript everything is an object,
+ so for suppose if we declare a string using the <code class="highlighter-rouge">String</code> object and compare
+ it with <code class="highlighter-rouge">var a = ""</code> then the outcome of the comparision would be false. This
+ is simply because if we declare a string using the <code class="highlighter-rouge">bad</code> way and compare it
+ with a string declared using the <code class="highlighter-rouge">good</code> way then fundamentally we are comparing
+ a string with an Object(String).</p>
 
-<p><code class="highlighter-rouge">Semicolons</code>:</p>
+ <p><code class="highlighter-rouge">Semicolons</code>:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
-<span class="c1">// Snippet one</span>
-<span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{}</span>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+ <span class="c1">// Snippet one</span>
+ <span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{}</span>
 
-<span class="nx">foo</span><span class="p">.</span><span class="nx">code</span> <span class="o">=</span> <span class="s2">"this is javascript empire"</span>
-<span class="nx">foo</span><span class="p">.</span><span class="nx">engine</span> <span class="o">=</span> <span class="s2">"node 0.12.7"</span>
-<span class="nx">foo</span><span class="p">.</span><span class="nx">author</span> <span class="o">=</span> <span class="s2">"akhil pandey"</span>
-<span class="nx">foo</span><span class="p">.</span><span class="nx">version</span> <span class="o">=</span> <span class="mf">0.1</span>
+ <span class="nx">foo</span><span class="p">.</span><span class="nx">code</span> <span class="o">=</span> <span class="s2">"this is javascript empire"</span>
+ <span class="nx">foo</span><span class="p">.</span><span class="nx">engine</span> <span class="o">=</span> <span class="s2">"node 0.12.7"</span>
+ <span class="nx">foo</span><span class="p">.</span><span class="nx">author</span> <span class="o">=</span> <span class="s2">"akhil pandey"</span>
+ <span class="nx">foo</span><span class="p">.</span><span class="nx">version</span> <span class="o">=</span> <span class="mf">0.1</span>
 
-<span class="c1">// Snippet two</span>
-<span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="p">{};</span>
+ <span class="c1">// Snippet two</span>
+ <span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="p">{};</span>
 
-<span class="nx">bar</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"akhil pandey"</span><span class="p">;</span>
-<span class="nx">bar</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">"www.akhilhector.com"</span><span class="p">;</span>
-<span class="nx">bar</span><span class="p">.</span><span class="nx">github</span> <span class="o">=</span> <span class="s2">"AkhilHector"</span><span class="p">;</span>
-<span class="nx">bar</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+ <span class="nx">bar</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"akhil pandey"</span><span class="p">;</span>
+ <span class="nx">bar</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">"www.akhilhector.com"</span><span class="p">;</span>
+ <span class="nx">bar</span><span class="p">.</span><span class="nx">github</span> <span class="o">=</span> <span class="s2">"AkhilHector"</span><span class="p">;</span>
+ <span class="nx">bar</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
 
-<span class="k">if</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">bar</span><span class="p">)</span> <span class="o">==</span> <span class="k">typeof</span><span class="p">(</span><span class="nx">foo</span><span class="p">))</span> <span class="p">{</span>
+ <span class="k">if</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">bar</span><span class="p">)</span> <span class="o">==</span> <span class="k">typeof</span><span class="p">(</span><span class="nx">foo</span><span class="p">))</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Semicolons donot matter at all"</span><span class="p">)</span>
-<span class="p">}</span>
+ <span class="p">}</span>
 
-</code></pre>
-</div>
+ </code></pre>
+ </div>
 
-<p>Code Snippet one and two are the same. but the fundamental difference
-between both the code samples is that one uses semicolons in the lang-
--uage semantics but whereas the other doesnot. Basically we are taught
-to use semicolons in languages such as C, C++, Java etc since lines of
-code are terminated using ‘;’ but in Javascript the entire scenario is
-different. There is absolutely no difference in execution of code with
-or without semicolons.</p>
+ <p>Code Snippet one and two are the same. but the fundamental difference
+ between both the code samples is that one uses semicolons in the lang-
+ -uage semantics but whereas the other doesnot. Basically we are taught
+ to use semicolons in languages such as C, C++, Java etc since lines of
+ code are terminated using ‘;’ but in Javascript the entire scenario is
+ different. There is absolutely no difference in execution of code with
+ or without semicolons.</p>
 
-<hr>
+ <hr>
 
-<h5 id="2-maps" class="header-level-2">2. Maps:</h5>
+ <h5 id="2-maps" class="header-level-2">2. Maps:</h5>
 
-<p>Methods part of Javascript <strong>Map</strong> Object:</p>
+ <p>Methods part of Javascript <strong>Map</strong> Object:</p>
 
-<ul>
+ <ul>
   <li><strong>Map</strong>.set(),</li>
   <li><strong>Map</strong>.get(),</li>
   <li><strong>Map</strong>.has(),</li>
@@ -161,190 +161,235 @@ or without semicolons.</p>
   <li><strong>Map</strong>.keys(),</li>
   <li><strong>Map</strong>.values(),</li>
   <li><strong>Map</strong>.entries()</li>
-</ul>
+ </ul>
 
-<hr>
-<p><strong>2.1 Map</strong>.set() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
-<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+ <hr>
+ <p><strong>2.1 Map</strong>.set() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+ <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="nx">y</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">};</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>               <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>               <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"akhil pandey"</span><span class="p">)</span>  <span class="c1">//Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar', 'name' =&gt; 'akhil pandey' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>               <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>               <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"akhil pandey"</span><span class="p">)</span>  <span class="c1">//Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar', 'name' =&gt; 'akhil pandey' }</span>
 
-</code></pre>
-</div>
-<p><strong>Map</strong>.set() is method which is used to add or update an element with a
-specific key and value in a map. Here the first argument is the key whilst
-the second argument is the value. The keys can be of any type but it would
-be preferable to use <code class="highlighter-rouge">objects</code> as keys instead of <code class="highlighter-rouge">strings</code> because if we
-use <code class="highlighter-rouge">strings</code> as keys there wouldn’t be any significant difference between
-<code class="highlighter-rouge">Maps</code> and <code class="highlighter-rouge">Objects</code>.</p>
+ </code></pre>
+ </div>
+ <p><strong>Map</strong>.set() is method which is used to add or update an element with a
+ specific key and value in a map. Here the first argument is the key whilst
+ the second argument is the value. The keys can be of any type but it would
+ be preferable to use <code class="highlighter-rouge">objects</code> as keys instead of <code class="highlighter-rouge">strings</code> because if we
+ use <code class="highlighter-rouge">strings</code> as keys there wouldn’t be any significant difference between
+ <code class="highlighter-rouge">Maps</code> and <code class="highlighter-rouge">Objects</code>.</p>
 
-<hr>
-<p><strong>2.2 Map</strong>.get() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
-<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+ <hr>
+ <p><strong>2.2 Map</strong>.get() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+ <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="nx">y</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">};</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>          <span class="c1">//returns 'foo'</span>
-</code></pre>
-</div>
-<p><strong>Map</strong>.get() is a method which is used to retrieve an element from the <code class="highlighter-rouge">Map</code>
-object with a specific key. So the key is passed as an argument and the
-element associated with that key is returned. If no key is passed as an
-argument then
-the method returns with <code class="highlighter-rouge">undefined</code>.</p>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>          <span class="c1">//returns 'foo'</span>
+ </code></pre>
+ </div>
+ <p><strong>Map</strong>.get() is a method which is used to retrieve an element from the <code class="highlighter-rouge">Map</code>
+ object with a specific key. So the key is passed as an argument and the
+ element associated with that key is returned. If no key is passed as an
+ argument then
+ the method returns with <code class="highlighter-rouge">undefined</code>.</p>
 
-<hr>
-<p><strong>2.3 Map</strong>.has() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
-<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+ <hr>
+ <p><strong>2.3 Map</strong>.has() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+ <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="nx">y</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">};</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>           <span class="c1">// returns true</span>
-<span class="nx">m1</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s2">"akhil"</span><span class="p">)</span>     <span class="c1">// retuqrns false</span>
-</code></pre>
-</div>
-<p><strong>Map</strong>.has() is a method which indicates if an element with the requested key
-is present in the map or not. The method takes only one argument which is the
-key and it returns a <code class="highlighter-rouge">true</code> if the element is present or <code class="highlighter-rouge">false</code> if the element
-is not present.</p>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>           <span class="c1">// returns true</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s2">"akhil"</span><span class="p">)</span>     <span class="c1">// retuqrns false</span>
+ </code></pre>
+ </div>
+ <p><strong>Map</strong>.has() is a method which indicates if an element with the requested key
+ is present in the map or not. The method takes only one argument which is the
+ key and it returns a <code class="highlighter-rouge">true</code> if the element is present or <code class="highlighter-rouge">false</code> if the element
+ is not present.</p>
 
-<hr>
-<p><strong>2.4 Map</strong>.size :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
-<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+ <hr>
+ <p><strong>2.4 Map</strong>.size :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+ <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="nx">y</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">};</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">size</span><span class="p">;</span>
-</code></pre>
-</div>
-<p><strong>Map</strong>.size is an accessor property that returns the number of elements present
-in the <code class="highlighter-rouge">Map</code> object. Since it is an accessor property we shouldn’t call/use this
-like a method, So if <code class="highlighter-rouge">m1.size()</code> is called then it throws a TypeError saying <code class="highlighter-rouge">m1.size</code> is not a function. Therefore the valid call to that property is <code class="highlighter-rouge">m1.size</code>.</p>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">size</span><span class="p">;</span>
+ </code></pre>
+ </div>
+ <p><strong>Map</strong>.size is an accessor property that returns the number of elements present
+ in the <code class="highlighter-rouge">Map</code> object. Since it is an accessor property we shouldn’t call/use this
+ like a method, So if <code class="highlighter-rouge">m1.size()</code> is called then it throws a TypeError saying <code class="highlighter-rouge">m1.size</code> is not a function. Therefore the valid call to that property is <code class="highlighter-rouge">m1.size</code>.</p>
 
-<hr>
-<p><strong>2.5 Map</strong>.clear() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
-<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+ <hr>
+ <p><strong>2.5 Map</strong>.clear() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+ <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="nx">y</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">};</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>         <span class="c1">// returns true</span>
-<span class="nx">m1</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
-<span class="nx">m1</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>         <span class="c1">// returns false</span>
-</code></pre>
-</div>
-<p><strong>Map</strong>.clear() is a method which clears/removes all the elements that are present
-in the <code class="highlighter-rouge">Map</code> object. The method doesn’t take any arguments but throws <code class="highlighter-rouge">undefined</code> in return.</p>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>         <span class="c1">// returns true</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>         <span class="c1">// returns false</span>
+ </code></pre>
+ </div>
+ <p><strong>Map</strong>.clear() is a method which clears/removes all the elements that are present
+ in the <code class="highlighter-rouge">Map</code> object. The method doesn’t take any arguments but throws <code class="highlighter-rouge">undefined</code> in return.</p>
 
-<hr>
-<p><strong>2.6 Map</strong>.delete() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
-<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+ <hr>
+ <p><strong>2.6 Map</strong>.delete() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+ <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="nx">y</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">};</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>              <span class="c1">// returns true</span>
-<span class="nx">m1</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>           <span class="c1">// returns true</span>
-<span class="nx">m1</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s2">"something"</span><span class="p">);</span> <span class="c1">// returns false</span>
-<span class="nx">m1</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>              <span class="c1">// returns false</span>
-</code></pre>
-</div>
-<p><strong>Map</strong>.delete() is method which is used for deleting a particular element
-from the <code class="highlighter-rouge">Map</code> object. The method takes only one argument which is the key and
-if the key is present in the <code class="highlighter-rouge">Map</code> it deletes the element and returns a <code class="highlighter-rouge">true</code>,
-but if the key isn’t present in the <code class="highlighter-rouge">Map</code> then it throws a <code class="highlighter-rouge">false</code>.</p>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>              <span class="c1">// returns true</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>           <span class="c1">// returns true</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s2">"something"</span><span class="p">);</span> <span class="c1">// returns false</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>              <span class="c1">// returns false</span>
+ </code></pre>
+ </div>
+ <p><strong>Map</strong>.delete() is method which is used for deleting a particular element
+ from the <code class="highlighter-rouge">Map</code> object. The method takes only one argument which is the key and
+ if the key is present in the <code class="highlighter-rouge">Map</code> it deletes the element and returns a <code class="highlighter-rouge">true</code>,
+ but if the key isn’t present in the <code class="highlighter-rouge">Map</code> then it throws a <code class="highlighter-rouge">false</code>.</p>
 
-<hr>
-<p><strong>2.7 Map</strong>.keys() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
-<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+ <hr>
+ <p><strong>2.7 Map</strong>.keys() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+ <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="nx">y</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">};</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>                   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>                   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>                   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>                   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">keys</span><span class="p">();</span>                          <span class="c1">// MapIterator { { id: 1 }, { id: 2 } }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">keys</span><span class="p">();</span>                          <span class="c1">// MapIterator { { id: 1 }, { id: 2 } }</span>
 
-<span class="kd">let</span> <span class="nx">iterator</span> <span class="o">=</span> <span class="nx">m1</span><span class="p">.</span><span class="nx">keys</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// { id: 1 }</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// { id: 2 }</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// undefined</span>
-</code></pre>
-</div>
-<p><strong>Map</strong>.keys() is a method which is used to return the keys present in the <code class="highlighter-rouge">Map</code>
-object for each element. The method returns an Map <strong>Iterator</strong> object which can
-be used for knowing the keys present in the <code class="highlighter-rouge">Map</code>. In the above example it is
-outlined how to iterate over <strong>Map</strong>.keys() using <code class="highlighter-rouge">next()</code>. It is to be noted
-that when <code class="highlighter-rouge">next()</code> is used on the <strong>Iterator</strong> object either <code class="highlighter-rouge">value</code> or <code class="highlighter-rouge">done</code>
-must be used because a straight forward usage of <code class="highlighter-rouge">next()</code> results in displaying
-an <code class="highlighter-rouge">Object</code>. <code class="highlighter-rouge">iterator.next().value</code> returns the value of the key present in the
-<strong>Iterator</strong> object while <code class="highlighter-rouge">iterator.next().done</code> returns a boolean saying <code class="highlighter-rouge">false</code>
-if there are more keys present in the <strong>Iterator</strong> object and <code class="highlighter-rouge">true</code> if there
-aren’t any more keys present.</p>
+ <span class="kd">let</span> <span class="nx">iterator</span> <span class="o">=</span> <span class="nx">m1</span><span class="p">.</span><span class="nx">keys</span><span class="p">();</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// { id: 1 }</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// { id: 2 }</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// undefined</span>
+ </code></pre>
+ </div>
+ <p><strong>Map</strong>.keys() is a method which is used to return the keys present in the <code class="highlighter-rouge">Map</code>
+ object for each element. The method returns an Map <strong>Iterator</strong> object which can
+ be used for knowing the keys present in the <code class="highlighter-rouge">Map</code>. In the above example it is
+ outlined how to iterate over <strong>Map</strong>.keys() using <code class="highlighter-rouge">next()</code>. It is to be noted
+ that when <code class="highlighter-rouge">next()</code> is used on the <strong>Iterator</strong> object either <code class="highlighter-rouge">value</code> or <code class="highlighter-rouge">done</code>
+ must be used because a straight forward usage of <code class="highlighter-rouge">next()</code> results in displaying
+ an <code class="highlighter-rouge">Object</code>. <code class="highlighter-rouge">iterator.next().value</code> returns the value of the key present in the
+ <strong>Iterator</strong> object while <code class="highlighter-rouge">iterator.next().done</code> returns a boolean saying <code class="highlighter-rouge">false</code>
+ if there are more keys present in the <strong>Iterator</strong> object and <code class="highlighter-rouge">true</code> if there
+ aren’t any more keys present.</p>
 
-<hr>
-<p><strong>2.8 Map</strong>.values() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
-<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+ <hr>
+ <p><strong>2.8 Map</strong>.values() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+ <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
     <span class="nx">y</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">};</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>                   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
-<span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>                   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>                   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>                   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
 
-<span class="nx">m1</span><span class="p">.</span><span class="nx">values</span><span class="p">();</span>                        <span class="c1">// MapIterator { 'foo', 'bar' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">values</span><span class="p">();</span>                        <span class="c1">// MapIterator { 'foo', 'bar' }</span>
 
-<span class="kd">let</span> <span class="nx">iterator</span> <span class="o">=</span> <span class="nx">m1</span><span class="p">.</span><span class="nx">values</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// foo</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// bar</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// undefined</span>
-</code></pre>
-</div>
-<p><strong>Map</strong>.values() is a method which is used to return the values present in the <code class="highlighter-rouge">Map</code>
-object for each element. The method returns an <strong>Iterator</strong> object which can be used
-for knowing the values present in the <code class="highlighter-rouge">Map</code>. In the above example it is outlined how
-to iterate over <strong>Map</strong>.values() using <code class="highlighter-rouge">next()</code>. It is to be noted that when <code class="highlighter-rouge">next()</code>
-is used on the <strong>Iterator</strong> object either <code class="highlighter-rouge">value</code> or <code class="highlighter-rouge">done</code> must be used because a
-straight forward usage of <code class="highlighter-rouge">next()</code> results in displaying an <code class="highlighter-rouge">Object</code>. <code class="highlighter-rouge">iterator.next().value</code> returns the value of a particular element present in the <strong>Iterator</strong> object while <code class="highlighter-rouge">iterator.next().done</code> returns a boolean saying <code class="highlighter-rouge">false</code>
-if there are more values present in the <strong>Iterator</strong> object and <code class="highlighter-rouge">true</code> if there aren’t
-any more values present.</p>
+ <span class="kd">let</span> <span class="nx">iterator</span> <span class="o">=</span> <span class="nx">m1</span><span class="p">.</span><span class="nx">values</span><span class="p">();</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// foo</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// bar</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// undefined</span>
+ </code></pre>
+ </div>
+ <p><strong>Map</strong>.values() is a method which is used to return the values present in the <code class="highlighter-rouge">Map</code>
+ object for each element. The method returns an <strong>Iterator</strong> object which can be used
+ for knowing the values present in the <code class="highlighter-rouge">Map</code>. In the above example it is outlined how
+ to iterate over <strong>Map</strong>.values() using <code class="highlighter-rouge">next()</code>. It is to be noted that when <code class="highlighter-rouge">next()</code>
+ is used on the <strong>Iterator</strong> object either <code class="highlighter-rouge">value</code> or <code class="highlighter-rouge">done</code> must be used because a
+ straight forward usage of <code class="highlighter-rouge">next()</code> results in displaying an <code class="highlighter-rouge">Object</code>. <code class="highlighter-rouge">iterator.next().value</code> returns the value of a particular element present in the <strong>Iterator</strong> object while <code class="highlighter-rouge">iterator.next().done</code> returns a boolean saying <code class="highlighter-rouge">false</code>
+ if there are more values present in the <strong>Iterator</strong> object and <code class="highlighter-rouge">true</code> if there aren’t
+ any more values present.</p>
 
-<hr>
-<p><strong>2.9 Map</strong>.entries() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">()</span>
-</code></pre>
-</div>
-<p><strong>Map</strong>.entries() is .</p>
+ <hr>
+ <p><strong>2.9 Map</strong>.entries() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+ <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="nx">y</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">};</span>
 
-<hr>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>                   <span class="c1">// Map { { id: 1 } =&gt; 'foo' }</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>                   <span class="c1">// Map { { id: 1 } =&gt; 'foo', { id: 2 } =&gt; 'bar' }</span>
 
-<p><code class="highlighter-rouge">MISC[Maps] :</code> <strong>WeakMaps</strong></p>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">entries</span><span class="p">();</span>                       <span class="c1">// MapIterator { [ { id: 1 }, 'foo' ], [ { id: 2 }, 'bar' ] }</span>
 
-<p><code class="highlighter-rouge">MISC[Maps] :</code> Use of <strong>…</strong> operator</p>
+ <span class="kd">let</span> <span class="nx">iterator</span> <span class="o">=</span> <span class="nx">m1</span><span class="p">.</span><span class="nx">values</span><span class="p">();</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// [ { id: 1 }, 'foo' ]</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// [ { id: 2 }, 'bar' ]</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// undefined</span>
+ </code></pre>
+ </div>
+ <p><strong>Map</strong>.entries() is a method which is sued to return the keys and values present in
+ the <code class="highlighter-rouge">Map</code> object for each element. The method is quite similar to <strong>Map</strong>.values() for
+ the fact that it returns an <strong>Iterator</strong> object that could be used to know the keys and
+ values present in the <code class="highlighter-rouge">Map</code>. In the above example it is showcased as to how to iterate
+ over the <strong>Map</strong>.entries() using <code class="highlighter-rouge">next()</code>. The method’s ability and its way of operation
+ is quite similar to <strong>Map</strong>.values() except for the fact that keys are also returned along
+ with the values as we iterate over the <strong>Iterator</strong> object. Similar to any <strong>Iterator</strong>
+ object once it reaches the end of its plane it would throw and <code class="highlighter-rouge">undefined</code>. Also, it is
+ to be noted that any other method that applies to an <strong>Iterator</strong> object could be used
+ with this since it is one and the same.</p>
 
-<hr>
+ <hr>
 
-<h5 id="3-sets" class="header-level-2">3. Sets:</h5>
+ <p><code class="highlighter-rouge">MISC[Maps] :</code> <strong>WeakMaps</strong> can be considered as <strong>Maps</strong> with differences in the methodology
+ of which garbage collections happen under the hood. To put it in simpler and plain terminology
+ there has to be a little conceptual lesson told in order to bring perspective. In Javascript
+ broadly everything is an <strong>object</strong> therefore the moment
+ you create one and the memory is being allocated for the same and until
+ the V8 automatically GC’s (short for garbage collects) the object
+ remains as a node in the graph. It is to be noted that until there are
+ no references to the object created in the memory it would not be GC’d,
+ so all the objects are held <code class="highlighter-rouge">tightly</code> or <code class="highlighter-rouge">strongly</code>. So essentially, the difference that is being brought with <strong>WeakMaps</strong> is that the keys of the object are held <code class="highlighter-rouge">weakly</code> henceforth, if the object is GC’d by V8 or by you then the entry would be removed from the <strong>WeakMap</strong> but not is values. There is no stark difference between the way <strong>Maps</strong> and <strong>WeakMaps</strong> operate although, <strong>WeakMaps</strong> only accept objects as keys(strictly). Let us look below to see how they are initialized:</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WeakMap</span><span class="p">();</span>
+ <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="nx">y</span> <span class="o">=</span> <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">};</span>
 
-<p>Methods part of Javascript <strong>Set</strong> Object:</p>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">);</span>                   <span class="c1">// WeakMap {}</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">);</span>                   <span class="c1">// WeakMap {}</span>
 
-<ul>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>                          <span class="c1">// 'foo'</span>
+ <span class="nx">m1</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span>                          <span class="c1">// 'bar'm1.</span>
+ </code></pre>
+ </div>
+ <p>It is to be noted that although the way <strong>WeakMaps</strong> API interacts with us the same way as
+ the <strong>Maps</strong> object does, there are limitations to the operations provided by the <strong>WeakMaps</strong>
+ API. It supports <code class="highlighter-rouge">get()</code>, <code class="highlighter-rouge">set()</code>, <code class="highlighter-rouge">has()</code> and <code class="highlighter-rouge">delete()</code> methods as of now.</p>
+
+ <hr>
+
+ <p><code class="highlighter-rouge">MISC[Maps] :</code> Use of <strong>…</strong> operator</p>
+
+ <hr>
+
+ <h5 id="3-sets" class="header-level-2">3. Sets:</h5>
+
+ <p>Methods part of Javascript <strong>Set</strong> Object:</p>
+
+ <ul>
   <li><strong>Set</strong>.add(),</li>
   <li><strong>Set</strong>.has(),</li>
   <li><strong>Set</strong>.size,</li>
@@ -353,77 +398,77 @@ any more values present.</p>
   <li><strong>Set</strong>.keys(),</li>
   <li><strong>Set</strong>.values(),</li>
   <li><strong>Set</strong>.entries()</li>
-</ul>
+ </ul>
 
-<hr>
-<p><strong>3.1 Set</strong>.add() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
-</code></pre>
-</div>
-<p><strong>Set</strong>.add() is .</p>
+ <hr>
+ <p><strong>3.1 Set</strong>.add() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
+ </code></pre>
+ </div>
+ <p><strong>Set</strong>.add() is .</p>
 
-<hr>
-<p><strong>3.2 Set</strong>.has() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
-</code></pre>
-</div>
-<p><strong>Set</strong>.has() is .</p>
+ <hr>
+ <p><strong>3.2 Set</strong>.has() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
+ </code></pre>
+ </div>
+ <p><strong>Set</strong>.has() is .</p>
 
-<hr>
-<p><strong>3.3 Set</strong>.size :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
-</code></pre>
-</div>
-<p><strong>Set</strong>.size is .</p>
+ <hr>
+ <p><strong>3.3 Set</strong>.size :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
+ </code></pre>
+ </div>
+ <p><strong>Set</strong>.size is .</p>
 
-<hr>
-<p><strong>3.4 Set</strong>.clear() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
-</code></pre>
-</div>
-<p><strong>Set</strong>.clear() is .</p>
+ <hr>
+ <p><strong>3.4 Set</strong>.clear() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
+ </code></pre>
+ </div>
+ <p><strong>Set</strong>.clear() is .</p>
 
-<hr>
-<p><strong>3.5 Set</strong>.delete() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
-</code></pre>
-</div>
-<p><strong>Set</strong>.delete() is .</p>
+ <hr>
+ <p><strong>3.5 Set</strong>.delete() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
+ </code></pre>
+ </div>
+ <p><strong>Set</strong>.delete() is .</p>
 
-<hr>
-<p><strong>3.6 Set</strong>.keys() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
-</code></pre>
-</div>
-<p><strong>Set</strong>.keys() is .</p>
+ <hr>
+ <p><strong>3.6 Set</strong>.keys() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
+ </code></pre>
+ </div>
+ <p><strong>Set</strong>.keys() is .</p>
 
-<hr>
-<p><strong>3.7 Set</strong>.values() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
-</code></pre>
-</div>
-<p><strong>Set</strong>.values() is .</p>
+ <hr>
+ <p><strong>3.7 Set</strong>.values() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
+ </code></pre>
+ </div>
+ <p><strong>Set</strong>.values() is .</p>
 
-<hr>
-<p><strong>3.8 Set</strong>.entries() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
-</code></pre>
-</div>
-<p><strong>Set</strong>.entries() is .</p>
+ <hr>
+ <p><strong>3.8 Set</strong>.entries() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Set</span><span class="p">()</span>
+ </code></pre>
+ </div>
+ <p><strong>Set</strong>.entries() is .</p>
 
-<hr>
+ <hr>
 
-<p><code class="highlighter-rouge">MISC[Sets] :</code> <strong>WeakSets</strong></p>
+ <p><code class="highlighter-rouge">MISC[Sets] :</code> <strong>WeakSets</strong></p>
 
-<p><code class="highlighter-rouge">MISC[Sets] :</code> Use of <strong>…</strong> operator</p>
+ <p><code class="highlighter-rouge">MISC[Sets] :</code> Use of <strong>…</strong> operator</p>
 
-<hr>
+ <hr>
 
-<h5 id="4-arrays" class="header-level-2">4. Arrays:</h5>
+ <h5 id="4-arrays" class="header-level-2">4. Arrays:</h5>
 
-<p>Methods part of Javascript <strong>Array</strong> Object:</p>
+ <p>Methods part of Javascript <strong>Array</strong> Object:</p>
 
-<ul>
+ <ul>
   <li><strong>Array</strong>.push(),</li>
   <li><strong>Array</strong>.pop(),</li>
   <li><strong>Array</strong>.indexOf(),</li>
@@ -449,94 +494,94 @@ any more values present.</p>
   <li><strong>Array</strong>.forEach()</li>
   <li><strong>Array</strong>.of()</li>
   <li><strong>Array</strong>.from()</li>
-</ul>
+ </ul>
 
-<hr>
-<p><strong>4.1 Array</strong>.push() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span> <span class="c1">// it prints [1,2,3,4,5,6]</span>
-</code></pre>
-</div>
-<p><strong>Array</strong>.push() is just a mutator function for adding elements to the array. So
+ <hr>
+ <p><strong>4.1 Array</strong>.push() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span> <span class="c1">// it prints [1,2,3,4,5,6]</span>
+ </code></pre>
+ </div>
+ <p><strong>Array</strong>.push() is just a mutator function for adding elements to the array. So
   we can simply mention the element as an argument to the function Array.push()
   and the mentioned element would be added as the last element in the array.</p>
 
-<hr>
-<p><strong>4.2 Array</strong>.pop()</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>         <span class="c1">// removes last element from the array</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">pop</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span>       <span class="c1">// removes last element despite giving the number as argument</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">pop</span><span class="p">(</span><span class="s2">"lol"</span><span class="p">);</span>    <span class="c1">// removes last element despite giving the string as argument</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span>  <span class="c1">// it prints [1,2,3,4]</span>
-</code></pre>
-</div>
-<p><strong>Array</strong>.pop() is just a simple mutator function for removing the last element
+ <hr>
+ <p><strong>4.2 Array</strong>.pop()</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>         <span class="c1">// removes last element from the array</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">pop</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span>       <span class="c1">// removes last element despite giving the number as argument</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">pop</span><span class="p">(</span><span class="s2">"lol"</span><span class="p">);</span>    <span class="c1">// removes last element despite giving the string as argument</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span>  <span class="c1">// it prints [1,2,3,4]</span>
+ </code></pre>
+ </div>
+ <p><strong>Array</strong>.pop() is just a simple mutator function for removing the last element
   of the array. So the method doesnot take arguments, Although if we try to
   pass arguments it would not take them. It performs only the basic operation
   of removing the last element of the Array.</p>
 
-<hr>
-<p><strong>4.3 Array</strong>.indexOf()</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"chandu"</span><span class="p">,</span> <span class="s2">"adheeth"</span><span class="p">,</span> <span class="s2">"varma"</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"chandu"</span><span class="p">,</span> <span class="s2">"adheeth"</span><span class="p">,</span> <span class="s2">"varma"</span><span class="p">,</span> <span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"shankar"</span><span class="p">,</span> <span class="s2">"akhil"</span><span class="p">];</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"akhil"</span><span class="p">);</span>         <span class="c1">// returns 0 since akhil is present at index 0</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"adheeth"</span><span class="p">);</span>       <span class="c1">// returns 2 since adheeth is present at index 2</span>
-<span class="nx">arr2</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"akhil"</span><span class="p">);</span>         <span class="c1">// returns 0 because it is the first occurrence of akhil</span>
-</code></pre>
-</div>
-<p><strong>Array</strong>.indexOf() is an accessor function that can be used for finding the
+ <hr>
+ <p><strong>4.3 Array</strong>.indexOf()</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"chandu"</span><span class="p">,</span> <span class="s2">"adheeth"</span><span class="p">,</span> <span class="s2">"varma"</span><span class="p">];</span>
+ <span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"chandu"</span><span class="p">,</span> <span class="s2">"adheeth"</span><span class="p">,</span> <span class="s2">"varma"</span><span class="p">,</span> <span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"shankar"</span><span class="p">,</span> <span class="s2">"akhil"</span><span class="p">];</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"akhil"</span><span class="p">);</span>         <span class="c1">// returns 0 since akhil is present at index 0</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"adheeth"</span><span class="p">);</span>       <span class="c1">// returns 2 since adheeth is present at index 2</span>
+ <span class="nx">arr2</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"akhil"</span><span class="p">);</span>         <span class="c1">// returns 0 because it is the first occurrence of akhil</span>
+ </code></pre>
+ </div>
+ <p><strong>Array</strong>.indexOf() is an accessor function that can be used for finding the
   index of a specific element in an array. The argument to be passed to this is
   the value of the element in the array. Also, it is to be noted that when there
   are multiple occurrences of the same element in the data then the first occurrence
   of the element in the array is displayed.</p>
 
-<hr>
-<p><strong>4.4 Array</strong>.lastIndexOf()</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"chandu"</span><span class="p">,</span> <span class="s2">"adheeth"</span><span class="p">,</span> <span class="s2">"varma"</span><span class="p">,</span> <span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"shankar"</span><span class="p">,</span> <span class="s2">"akhil"</span><span class="p">];</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">"akhil"</span><span class="p">);</span>         <span class="c1">// returns 6 since akhil last occurred at index 6</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">"adheeth"</span><span class="p">);</span>       <span class="c1">// returns 2 since adheeth last occurred at index 2</span>
-</code></pre>
-</div>
-<p><strong>Array</strong>.lastIndexOf() is an accessor function, quite similar in behaviour to the
+ <hr>
+ <p><strong>4.4 Array</strong>.lastIndexOf()</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"chandu"</span><span class="p">,</span> <span class="s2">"adheeth"</span><span class="p">,</span> <span class="s2">"varma"</span><span class="p">,</span> <span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"shankar"</span><span class="p">,</span> <span class="s2">"akhil"</span><span class="p">];</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">"akhil"</span><span class="p">);</span>         <span class="c1">// returns 6 since akhil last occurred at index 6</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">"adheeth"</span><span class="p">);</span>       <span class="c1">// returns 2 since adheeth last occurred at index 2</span>
+ </code></pre>
+ </div>
+ <p><strong>Array</strong>.lastIndexOf() is an accessor function, quite similar in behaviour to the
   <code class="highlighter-rouge">indexOf</code> function. Although, the difference being <code class="highlighter-rouge">lastIndexOf</code> returns the index
   of the last occurrence of the element in array.</p>
 
-<hr>
-<p><strong>4.5 Array</strong>.concat()</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"chandu"</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"adheeth"</span><span class="p">,</span> <span class="s2">"varma"</span><span class="p">,</span> <span class="s2">"kp"</span><span class="p">]</span>
-<span class="kd">var</span> <span class="nx">arr3</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr2</span><span class="p">);</span>         <span class="c1">// returns [ 'akhil', 'chandu', 'adheeth', 'varma', 'kp' ]</span>
-<span class="nx">arr2</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span>         <span class="c1">// returns [ 'adheeth', 'varma', 'kp', 'akhil', 'chandu' ]</span>
-<span class="nx">arr3</span> <span class="o">=</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr2</span><span class="p">)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr3</span><span class="p">)</span>          <span class="c1">// returns [ 'akhil', 'chandu', 'adheeth', 'varma', 'kp' ]</span>
-</code></pre>
-</div>
-<p><strong>Array</strong>.concat() is an accessor function used to create new arrays from existing
+ <hr>
+ <p><strong>4.5 Array</strong>.concat()</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"chandu"</span><span class="p">];</span>
+ <span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"adheeth"</span><span class="p">,</span> <span class="s2">"varma"</span><span class="p">,</span> <span class="s2">"kp"</span><span class="p">]</span>
+ <span class="kd">var</span> <span class="nx">arr3</span> <span class="o">=</span> <span class="p">[]</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr2</span><span class="p">);</span>         <span class="c1">// returns [ 'akhil', 'chandu', 'adheeth', 'varma', 'kp' ]</span>
+ <span class="nx">arr2</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span>         <span class="c1">// returns [ 'adheeth', 'varma', 'kp', 'akhil', 'chandu' ]</span>
+ <span class="nx">arr3</span> <span class="o">=</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr2</span><span class="p">)</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr3</span><span class="p">)</span>          <span class="c1">// returns [ 'akhil', 'chandu', 'adheeth', 'varma', 'kp' ]</span>
+ </code></pre>
+ </div>
+ <p><strong>Array</strong>.concat() is an accessor function used to create new arrays from existing
   arrays. It takes an array as an argument and after the function is executed the array
   in the argument gets concatenated to the array calling <code class="highlighter-rouge">concat()</code>.</p>
 
-<hr>
-<p><strong>4.6 Array</strong>.splice() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// case 1 :</span>
-<span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
-<span class="nx">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nx">nums</span><span class="p">)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span> <span class="c1">// it prints [1, 2, 3, 4, 5, [6, 7, 8, 9, 10]]</span>
+ <hr>
+ <p><strong>4.6 Array</strong>.splice() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// case 1 :</span>
+ <span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+ <span class="nx">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nx">nums</span><span class="p">)</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span> <span class="c1">// it prints [1, 2, 3, 4, 5, [6, 7, 8, 9, 10]]</span>
 
-<span class="c1">// case 2 :</span>
-<span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'one'</span><span class="p">];</span>
-<span class="nx">arr2</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">,</span> <span class="s1">'three'</span><span class="p">,</span> <span class="s1">'four'</span><span class="p">,</span> <span class="s1">'five'</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr2</span><span class="p">);</span> <span class="c1">// it prints ['one', 'two', 'three', 'four', 'five']</span>
+ <span class="c1">// case 2 :</span>
+ <span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'one'</span><span class="p">];</span>
+ <span class="nx">arr2</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">,</span> <span class="s1">'three'</span><span class="p">,</span> <span class="s1">'four'</span><span class="p">,</span> <span class="s1">'five'</span><span class="p">);</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr2</span><span class="p">);</span> <span class="c1">// it prints ['one', 'two', 'three', 'four', 'five']</span>
 
-<span class="c1">// case 3 :</span>
-<span class="kd">var</span> <span class="nx">arr3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">];</span>
-<span class="nx">arr3</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr3</span><span class="p">);</span> <span class="c1">// it prints [1, 2, 3, 4, 5]</span>
-</code></pre>
-</div>
-<p><strong>Array</strong>.splice() has a varied set of operations that which could be
+ <span class="c1">// case 3 :</span>
+ <span class="kd">var</span> <span class="nx">arr3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">];</span>
+ <span class="nx">arr3</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr3</span><span class="p">);</span> <span class="c1">// it prints [1, 2, 3, 4, 5]</span>
+ </code></pre>
+ </div>
+ <p><strong>Array</strong>.splice() has a varied set of operations that which could be
   performed. If we observe case 1 we are adding elements to the array
   arr1 from the fifth index. Also if we observe in case 2, we can see
   that without assigning a variable the elements that which are to be
@@ -548,30 +593,30 @@ any more values present.</p>
   the specified index, although if the value is not ‘0’ then number
   specified would be the number of elements that will be removed.</p>
 
-<hr>
-<p><strong>4.7 Array</strong>.shift() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"chandu"</span><span class="p">,</span> <span class="s2">"varma"</span><span class="p">,</span> <span class="s2">"kp"</span><span class="p">,</span> <span class="s2">"adheeth"</span><span class="p">];</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">shift</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">shift</span><span class="p">(</span><span class="s2">"lolagain"</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span> <span class="c1">// it prints [4,5,6,"akhil","chandu","varma","kp","adheeth"]</span>
-</code></pre>
-</div>
-<p><strong>Array</strong>.shift() is no different from the above mentioned method Array.pop(),
+ <hr>
+ <p><strong>4.7 Array</strong>.shift() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"chandu"</span><span class="p">,</span> <span class="s2">"varma"</span><span class="p">,</span> <span class="s2">"kp"</span><span class="p">,</span> <span class="s2">"adheeth"</span><span class="p">];</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">shift</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">shift</span><span class="p">(</span><span class="s2">"lolagain"</span><span class="p">);</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span> <span class="c1">// it prints [4,5,6,"akhil","chandu","varma","kp","adheeth"]</span>
+ </code></pre>
+ </div>
+ <p><strong>Array</strong>.shift() is no different from the above mentioned method Array.pop(),
   although the major difference comes regarding the index of the element
   that which is to be removed. It removes the first element of the array.
   Similar to Array.pop() this method also desnot take arguments and even
   though an argument is passed it continues to perform its operation.</p>
 
-<hr>
-<p><strong>4.8 Array</strong>.unshift() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
-<span class="nx">str</span> <span class="o">=</span> <span class="s2">"akhil pandey"</span><span class="p">;</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span> <span class="c1">// it prints ["akhil pandey", 1, 2, 3, 4, 5];</span>
-</code></pre>
-</div>
-<p><strong>Array</strong>.unshift() falls into the same category as that of Array.push(), Since
+ <hr>
+ <p><strong>4.8 Array</strong>.unshift() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+ <span class="nx">str</span> <span class="o">=</span> <span class="s2">"akhil pandey"</span><span class="p">;</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span> <span class="c1">// it prints ["akhil pandey", 1, 2, 3, 4, 5];</span>
+ </code></pre>
+ </div>
+ <p><strong>Array</strong>.unshift() falls into the same category as that of Array.push(), Since
   both of them are used as mutator functions for adding elements into an array.
   The only difference between both the methods is that if we pass an argument
   to Array.unshift() then the element would be added as the first element of
@@ -582,116 +627,168 @@ any more values present.</p>
   misunderstood only for adding elements since it adds elements to the start
   of the Array.</p>
 
-<hr>
-<p><strong>4.9 Array</strong>.reverse() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'akhil'</span><span class="p">,</span> <span class="s1">'varma'</span><span class="p">,</span> <span class="s1">'chandu'</span><span class="p">,</span> <span class="s1">'adheeth'</span><span class="p">];</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span> <span class="c1">// it prints ['adheeth', 'chandu', 'varma', 'akhil', 1]</span>
-</code></pre>
-</div>
-<p><strong>Array</strong>.reverse() is just a mutator function that which is used to
+ <hr>
+ <p><strong>4.9 Array</strong>.reverse() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'akhil'</span><span class="p">,</span> <span class="s1">'varma'</span><span class="p">,</span> <span class="s1">'chandu'</span><span class="p">,</span> <span class="s1">'adheeth'</span><span class="p">];</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span> <span class="c1">// it prints ['adheeth', 'chandu', 'varma', 'akhil', 1]</span>
+ </code></pre>
+ </div>
+ <p><strong>Array</strong>.reverse() is just a mutator function that which is used to
   reverse the order of elements in the array.</p>
 
-<hr>
-<p><strong>4.10 Array</strong>.sort() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'varma'</span><span class="p">,</span> <span class="s1">'chandu'</span><span class="p">,</span> <span class="s1">'akhil'</span><span class="p">,</span> <span class="s1">'adheeth'</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">23</span><span class="p">];</span>
-<span class="nx">arr1</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
-<span class="nx">arr2</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span> <span class="c1">// it prints ['adheeth', 'akhil', 'chandu', 'varma']</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr2</span><span class="p">);</span> <span class="c1">// it prints [2, 5, 6, 9, 23]</span>
-</code></pre>
-</div>
-<p><strong>Array</strong>.sort() is also another mutator function that which is used to
+ <hr>
+ <p><strong>4.10 Array</strong>.sort() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'varma'</span><span class="p">,</span> <span class="s1">'chandu'</span><span class="p">,</span> <span class="s1">'akhil'</span><span class="p">,</span> <span class="s1">'adheeth'</span><span class="p">];</span>
+ <span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">23</span><span class="p">];</span>
+ <span class="nx">arr1</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+ <span class="nx">arr2</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span> <span class="c1">// it prints ['adheeth', 'akhil', 'chandu', 'varma']</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr2</span><span class="p">);</span> <span class="c1">// it prints [2, 5, 6, 9, 23]</span>
+ </code></pre>
+ </div>
+ <p><strong>Array</strong>.sort() is also another mutator function that which is used to
   put the elements in order. Both strings and numbers can be sorted
   using the Array.sort() method. The sorting takes place in ascending
   order, so if strings or characters are elements then depending on
   the alphabetical scale, the sorting takes place.</p>
 
-<hr>
-<p><strong>4.11 Array</strong>.map() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+ <hr>
+ <p><strong>4.11 Array</strong>.map() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nx">arr</span> <span class="o">=</span> <span class="s2">"My name is "</span> <span class="o">+</span> <span class="nx">arr</span><span class="p">;</span>
-<span class="p">}</span>
+ <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"varma"</span><span class="p">,</span> <span class="s2">"chandu"</span><span class="p">,</span> <span class="s2">"adheeth"</span><span class="p">,</span> <span class="s2">"kp"</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">combine</span> <span class="o">=</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">add</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">combine</span><span class="p">);</span>
-<span class="cm">/* it prints
-[   'My name is akhil',
+ <span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"akhil"</span><span class="p">,</span> <span class="s2">"varma"</span><span class="p">,</span> <span class="s2">"chandu"</span><span class="p">,</span> <span class="s2">"adheeth"</span><span class="p">,</span> <span class="s2">"kp"</span><span class="p">];</span>
+ <span class="kd">var</span> <span class="nx">combine</span> <span class="o">=</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">add</span><span class="p">);</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">combine</span><span class="p">);</span>
+ <span class="cm">/* it prints
+ [   'My name is akhil',
     'My name is varma',
     'My name is chandu',
     'My name is adheeth',
     'My name is kp' ]
-*/</span>
-</code></pre>
-</div>
-<p><strong>Array</strong>.map() is a method which is more like an iterator function, but
+ */</span>
+ </code></pre>
+ </div>
+ <p><strong>Array</strong>.map() is a method which is more like an iterator function, but
   the fundamental difference between this and Array.forEach() is that
   Array.map() returns a new array with the result, whereas Array.forEach()
   doesn’t return a new array with the function result.</p>
 
-<p>NOTE : Array.map() is a very powerful method and it can be applied to
+ <p>NOTE : Array.map() is a very powerful method and it can be applied to
   diverse applications. Although since this method iterates over each
   element using Array.map() must be carefully looked upon and should
   not be put to use if the purpose is iterating over some elements.</p>
 
-<hr>
-<p><strong>4.14 Array</strong>.reduce() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">combine</span><span class="p">(</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">curr</span><span class="p">)</span> <span class="p">{</span>
+ <hr>
+ <p><strong>4.12 Array</strong>.filter() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">oddNumbers</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">?</span> <span class="kc">true</span><span class="p">:</span><span class="kc">false</span><span class="p">;</span>
+ <span class="p">}</span>
+
+ <span class="kd">function</span> <span class="nx">evenNumbers</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">?</span> <span class="kc">true</span><span class="p">:</span><span class="kc">false</span><span class="p">;</span>
+ <span class="p">}</span>
+
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="nx">oddNumbers</span><span class="p">));</span>        <span class="c1">// returns '[ 1, 3, 5, 7, 9 ]'</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="nx">evenNumbers</span><span class="p">));</span>       <span class="c1">// returns '[ 2, 4, 6, 8 ]'</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="nx">number</span> <span class="o">=&gt;</span> <span class="nx">number</span><span class="o">*</span><span class="nx">number</span><span class="p">));</span>       <span class="c1">// returns '[ 2, 4, 6, 8 ]'</span>
+ </code></pre>
+ </div>
+ <p><strong>Array</strong>.filter() is a method that takes a function as
+ an argument and would return an array containing all the elements that
+ successfully passed the function’s test condition. The function given to
+ <strong>Array</strong>.filter() as input would take the array, index
+ and element into consideration while applying the specified computation
+ on every element in the given array. In the above code snippet it can be
+ observed how filter takes an array as input and applies the respective
+ function onto every element and returns a new array that would
+ successfully pass the test. There is more to this method than what is
+ just explained. Since, it is difficult to express the power and
+ magnitude of <strong>Array</strong>.filter() in one go, it is better to please check MDN docs for further information on <strong>Array.prototype</strong>.filter().</p>
+
+ <hr>
+ <p><strong>4.13 Array</strong>.some() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">hasSingleDigitNum</span><span class="p">(</span><span class="nx">elements</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">elements</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">;</span>
+ <span class="p">}</span>
+
+ <span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">];</span>
+ <span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">100</span><span class="p">];</span>
+
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">hasSingleDigitNum</span><span class="p">));</span>                  <span class="c1">// returns false</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr2</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">hasSingleDigitNum</span><span class="p">));</span>                  <span class="c1">// returns true</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nx">some</span><span class="p">(</span><span class="nx">hasSingleDigitNum</span><span class="p">));</span>       <span class="c1">// returns false</span>
+
+ </code></pre>
+ </div>
+ <p><strong>Array</strong>.some() is a mutator method that would take a
+ function as an input and then apply that function to every element in
+ the given array. So, it would just give the result of that function as
+ and when applied to every element in the array. The result of this
+ particular method is <code class="highlighter-rouge">true</code> if the value is <code class="highlighter-rouge">Truthy</code> and <code class="highlighter-rouge">false</code> if not. The confusing part here is, when you have an array that would potentially have both <code class="highlighter-rouge">Truthy</code> and <code class="highlighter-rouge">Falsy</code> values then it would return <code class="highlighter-rouge">true</code> since there is a <code class="highlighter-rouge">Truthy</code> value obtained after <strong>Array</strong>.some()
+ performed the computation on every element of the array. So, it would
+ be advised to understand the full context of this method before this is
+ used for identifying any outliers present in your array because, instead
+ of returning the result it would just pipe out <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>. Check MDN for more information on this method.</p>
+
+ <hr>
+ <p><strong>4.14 Array</strong>.reduce() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">combine</span><span class="p">(</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">curr</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nx">prev</span> <span class="o">+</span> <span class="nx">curr</span><span class="p">;</span>
-<span class="p">}</span>
+ <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one "</span><span class="p">,</span> <span class="s2">"two "</span><span class="p">,</span> <span class="s2">"three "</span><span class="p">,</span> <span class="s2">"four "</span><span class="p">,</span> <span class="s2">"five "</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">numsum</span> <span class="o">=</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">combine</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">worsum</span> <span class="o">=</span> <span class="nx">arr2</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">combine</span><span class="p">);</span>
+ <span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+ <span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one "</span><span class="p">,</span> <span class="s2">"two "</span><span class="p">,</span> <span class="s2">"three "</span><span class="p">,</span> <span class="s2">"four "</span><span class="p">,</span> <span class="s2">"five "</span><span class="p">];</span>
+ <span class="kd">var</span> <span class="nx">numsum</span> <span class="o">=</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">combine</span><span class="p">);</span>
+ <span class="kd">var</span> <span class="nx">worsum</span> <span class="o">=</span> <span class="nx">arr2</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">combine</span><span class="p">);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numsum</span><span class="p">);</span> <span class="c1">// it prints 15</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">worsum</span><span class="p">);</span> <span class="c1">// it prints "one two three four five "</span>
-</code></pre>
-</div>
-<p><strong>Array</strong>.reduce() is a method which can be used with arrays by taking
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numsum</span><span class="p">);</span> <span class="c1">// it prints 15</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">worsum</span><span class="p">);</span> <span class="c1">// it prints "one two three four five "</span>
+ </code></pre>
+ </div>
+ <p><strong>Array</strong>.reduce() is a method which can be used with arrays by taking
   a function as an argument, thereby making the function to iterate
   over the array elements. Array.reduce() iterates over the array elements
   and thus upon reaching the end of the Array yields a single value.</p>
 
-<p>NOTE : Array.reduceRight() is more of similar to Array.reduce(), but
+ <p>NOTE : Array.reduceRight() is more of similar to Array.reduce(), but
   it iterates over the array elements from the rightmost element to the
   leftmost element, instead of going  the usual way.</p>
 
-<hr>
+ <hr>
 
-<p><code class="highlighter-rouge">TIPS[Arrays] :</code></p>
+ <p><code class="highlighter-rouge">TIPS[Arrays] :</code></p>
 
-<ul>
+ <ul>
   <li>With the available list of the Array methods we can generally
-perform most of the operations, but if we require special methods or
-custom methods that must be part of the already existing Array Object
-then we define the method with by taking the concept of <strong>Object.prototype</strong>.</li>
-</ul>
+ perform most of the operations, but if we require special methods or
+ custom methods that must be part of the already existing Array Object
+ then we define the method with by taking the concept of <strong>Object.prototype</strong>.</li>
+ </ul>
 
-<hr>
+ <hr>
 
-<p><code class="highlighter-rouge">MISC[Arrays] :</code></p>
+ <p><code class="highlighter-rouge">MISC[Arrays] :</code></p>
 
-<p><strong>Manipulating the Array Object by writing your own methods</strong> :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">boo</span> <span class="o">=</span> <span class="p">[]</span>
+ <p><strong>Manipulating the Array Object by writing your own methods</strong> :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">boo</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+ <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"We write our method inside this block"</span><span class="p">)</span>
-<span class="p">}</span>
+ <span class="p">}</span>
 
-<span class="nx">boo</span><span class="p">.</span><span class="nx">foo</span><span class="p">()</span> <span class="c1">// returns whatever is included inside the above mentioned code block</span>
-</code></pre>
-</div>
+ <span class="nx">boo</span><span class="p">.</span><span class="nx">foo</span><span class="p">()</span> <span class="c1">// returns whatever is included inside the above mentioned code block</span>
+ </code></pre>
+ </div>
 
-<p>Adding methods to Array.prototype essentially means that we are adding methods
+ <p>Adding methods to Array.prototype essentially means that we are adding methods
  to the global array object. So an Array.prototype would actually mean that adding
  a new prototype to the existing Array object. So a better analogy can be explained
  with the below code snippet.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">union</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">bar</span><span class="p">)</span> <span class="p">{</span>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">union</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">bar</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">l</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
         <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
         <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">n</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
@@ -699,60 +796,60 @@ then we define the method with by taking the concept of <strong>Object.prototype
                 <span class="nx">l</span><span class="o">++</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-<span class="p">}</span>
+ <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"three"</span><span class="p">,</span> <span class="s2">"four"</span><span class="p">,</span> <span class="s2">"five"</span><span class="p">,</span> <span class="s2">"six"</span><span class="p">,</span> <span class="s2">"seven"</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">];</span>
+ <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">];</span>
+ <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"three"</span><span class="p">,</span> <span class="s2">"four"</span><span class="p">,</span> <span class="s2">"five"</span><span class="p">,</span> <span class="s2">"six"</span><span class="p">,</span> <span class="s2">"seven"</span><span class="p">];</span>
+ <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+ <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">];</span>
 
-<span class="nx">a</span><span class="p">.</span><span class="nx">union</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
-<span class="nx">c</span><span class="p">.</span><span class="nx">union</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
-</code></pre>
-</div>
-<p>Observing the Above array prototype if we can carefully observe it is nothing
+ <span class="nx">a</span><span class="p">.</span><span class="nx">union</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+ <span class="nx">c</span><span class="p">.</span><span class="nx">union</span><span class="p">(</span><span class="nx">d</span><span class="p">);</span>
+ </code></pre>
+ </div>
+ <p>Observing the Above array prototype if we can carefully observe it is nothing
  but a working replica of how the Array Method Array.prototype.concat() works. So
  in concat() method another array is passed as an argument to the method and the
  primary array concats and extends the array.</p>
 
-<p>Things to lookup in the above example are how custom methods can be written in
+ <p>Things to lookup in the above example are how custom methods can be written in
  order to suit the specific purpose to not only the Array prototype but also all
  the Javscript recognized objects such as the String, Number, Regexp or the Object
  itself.</p>
 
-<p><strong>Associative Arrays</strong> :</p>
+ <p><strong>Associative Arrays</strong> :</p>
 
-<p>Preferably this is somewhat a great part of the language although this has
+ <p>Preferably this is somewhat a great part of the language although this has
  been an integral part of many programming languages like PHP and Python, there
  is a slight change to what it offers in other programming languages to this.</p>
 
-<p>comes with the name Dictionaries.</p>
+ <p>comes with the name Dictionaries.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="p">[];</span>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[];</span>
+ <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="p">[];</span>
 
-<span class="nx">a</span><span class="p">[</span><span class="s2">"one"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"boo this is my first item"</span><span class="p">;</span>
-<span class="nx">a</span><span class="p">[</span><span class="s2">"two"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"foo this is my second item"</span><span class="p">;</span>
-<span class="nx">a</span><span class="p">[</span><span class="s2">"three"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"alas this is final item"</span><span class="p">;</span>
+ <span class="nx">a</span><span class="p">[</span><span class="s2">"one"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"boo this is my first item"</span><span class="p">;</span>
+ <span class="nx">a</span><span class="p">[</span><span class="s2">"two"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"foo this is my second item"</span><span class="p">;</span>
+ <span class="nx">a</span><span class="p">[</span><span class="s2">"three"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"alas this is final item"</span><span class="p">;</span>
 
-<span class="nx">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"oh not again the first item"</span><span class="p">;</span>
-<span class="nx">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"cant help with the second item"</span><span class="p">;</span>
-<span class="nx">b</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"finally got rid with the third item"</span><span class="p">;</span>
+ <span class="nx">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"oh not again the first item"</span><span class="p">;</span>
+ <span class="nx">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"cant help with the second item"</span><span class="p">;</span>
+ <span class="nx">b</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"finally got rid with the third item"</span><span class="p">;</span>
 
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// would display the contents of the array 'a'</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// would display the contents of the array 'b'</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// would display the contents of the array 'a'</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// would display the contents of the array 'b'</span>
 
-<span class="kd">var</span> <span class="nx">len1</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">len2</span> <span class="o">=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">len3</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">a</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+ <span class="kd">var</span> <span class="nx">len1</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+ <span class="kd">var</span> <span class="nx">len2</span> <span class="o">=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+ <span class="kd">var</span> <span class="nx">len3</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">a</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">len1</span><span class="p">);</span> <span class="c1">// would display undefined</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">len2</span><span class="p">);</span> <span class="c1">// would display 3</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">len3</span><span class="p">);</span> <span class="c1">// would display 3</span>
-</code></pre>
-</div>
-<p>The above snippet is a classic case implementation of arrays with named
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">len1</span><span class="p">);</span> <span class="c1">// would display undefined</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">len2</span><span class="p">);</span> <span class="c1">// would display 3</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">len3</span><span class="p">);</span> <span class="c1">// would display 3</span>
+ </code></pre>
+ </div>
+ <p>The above snippet is a classic case implementation of arrays with named
  indexes or the associative arrays. Implementation can be done as mentioned
  above and almost all array opertions except some can be performed very
  smoothly with named indexes. The problem arises when an array with named
@@ -761,25 +858,25 @@ then we define the method with by taking the concept of <strong>Object.prototype
  if we use named indexes then it is no good because the indexes are strings
  but no longer numbers.</p>
 
-<p>In such a case if we need to return the length of the named indexed array
+ <p>In such a case if we need to return the length of the named indexed array
  then Object.keys(Arrayname).length would give the length of the array.The
  same is explained by taking three variables ‘len1’, ‘len2’, ‘len3’ where
  both ‘len1’, ‘len3’ store the lengths of a but ‘len1’ returns undefined
  and ‘len3’ returns 3 as the length of the array.</p>
 
-<hr>
+ <hr>
 
-<h5 id="5-strings" class="header-level-2">5. Strings:</h5>
+ <h5 id="5-strings" class="header-level-2">5. Strings:</h5>
 
-<p>Methods which are part of Javascript <strong>String</strong> Object:</p>
+ <p>Methods which are part of Javascript <strong>String</strong> Object:</p>
 
-<ul>
+ <ul>
   <li><strong>String</strong>.charAt(index);</li>
   <li><strong>String</strong>.concat(string1, string2, …stringN);</li>
   <li><strong>String</strong>.indexOf(“stringname”);</li>
   <li><strong>String</strong>.lastIndexOf(“stringname”);</li>
-  <li><strong>String</strong>.link(url);</li>
   <li><strong>String</strong>.search(regExp);</li>
+  <li><strong>String</strong>.split(string, delimiter)</li>
   <li><strong>String</strong>.slice(begin, end);</li>
   <li><strong>String</strong>.substring(begin, end);</li>
   <li><strong>String</strong>.substr(begin, end);</li>
@@ -791,94 +888,144 @@ then we define the method with by taking the concept of <strong>Object.prototype
   <li><strong>String</strong>.trim(begin, end);</li>
   <li><strong>String</strong>.toLowerCase();</li>
   <li><strong>String</strong>.toUpperCase();</li>
-</ul>
+ </ul>
 
-<hr>
-<p><strong>5.1 String</strong>.charAt() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s2">"akhil"</span><span class="p">;</span>
-<span class="nx">str1</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>        <span class="c1">// returns '' or empty string</span>
-<span class="nx">str1</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>         <span class="c1">// returns 'i' as it is located at position 3</span>
-<span class="nx">str1</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>         <span class="c1">// returns '' or empty string</span>
-</code></pre>
-</div>
-<p><strong>String</strong>.charAt() is a method which can be used for
-determining the character present at a particular index of the given
-string. The function takes just one argument and it returns the
-character as output. It is to be noted that when the index given as
-input if either greater than or lesser than the string length then the
-function just returns <code class="highlighter-rouge">''</code> or an empty string as output.</p>
+ <hr>
+ <p><strong>5.1 String</strong>.charAt() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s2">"akhil"</span><span class="p">;</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>        <span class="c1">// returns '' or empty string</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>         <span class="c1">// returns 'i' as it is located at position 3</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>         <span class="c1">// returns '' or empty string</span>
+ </code></pre>
+ </div>
+ <p><strong>String</strong>.charAt() is a method which can be used for
+ determining the character present at a particular index of the given
+ string. The function takes just one argument and it returns the
+ character as output. It is to be noted that when the index given as
+ input if either greater than or lesser than the string length then the
+ function just returns <code class="highlighter-rouge">''</code> or an empty string as output.</p>
 
-<hr>
-<p><strong>5.2 String</strong>.concat() :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s2">"akhil"</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">str2</span> <span class="o">=</span> <span class="s2">"pandey"</span><span class="p">;</span>
-<span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">str2</span><span class="p">);</span>                    <span class="c1">// returns the string 'akhilpandey'</span>
-<span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>                    <span class="c1">// returns the string 'akhil1234'</span>
-<span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>                    <span class="c1">// returns the string 'akhiltrue'</span>
-<span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>                    <span class="c1">// returns the string 'akhilnull'</span>
-<span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>               <span class="c1">// returns the string 'akhilundefined'</span>
-<span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]);</span>         <span class="c1">// returns the string 'akhil1,2,3,4,5'</span>
-<span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">78</span><span class="p">);</span>     <span class="c1">// returns the string 'akhil 12345678'</span>
-<span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">({</span><span class="na">a</span><span class="p">:</span> <span class="s2">"123"</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="s2">"456"</span><span class="p">});</span>    <span class="c1">// returns the string 'akhil[object Object]'</span>
-</code></pre>
-</div>
-<p><strong>String</strong>.concat() is a method which is used to combined two or more strings
-  in order return a new string. Fundamentally this method is used for string
-  operations, but if a string is typically concatenated with another type then
+ <hr>
+ <p><strong>5.2 String</strong>.concat() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s2">"akhil"</span><span class="p">;</span>
+ <span class="kd">var</span> <span class="nx">str2</span> <span class="o">=</span> <span class="s2">"pandey"</span><span class="p">;</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">str2</span><span class="p">);</span>                    <span class="c1">// returns the string 'akhilpandey'</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>                    <span class="c1">// returns the string 'akhil1234'</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>                    <span class="c1">// returns the string 'akhiltrue'</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>                    <span class="c1">// returns the string 'akhilnull'</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>               <span class="c1">// returns the string 'akhilundefined'</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]);</span>         <span class="c1">// returns the string 'akhil1,2,3,4,5'</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">78</span><span class="p">);</span>     <span class="c1">// returns the string 'akhil 12345678'</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">({</span><span class="na">a</span><span class="p">:</span> <span class="s2">"123"</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="s2">"456"</span><span class="p">});</span>    <span class="c1">// returns the string 'akhil[object Object]'</span>
+ </code></pre>
+ </div>
+ <p><strong>String</strong>.concat() is a method which is used to
+ combined two or more string  in order return a new string. Fundamentally
+ this method is used for string
+  operations, but if a string is typically concatenated with another
+ type then
   the resultant will be a string. If we observe above example we see <code class="highlighter-rouge">str1.concat(true)</code> so here the resultant string is <code class="highlighter-rouge">akhiltrue</code> as <strong>String</strong>.concat()
  combines the value of both the arguments and produces a concatenated
-string as end result. Now there are even special cases for suppose, if a
+ string as end result. Now there are even special cases for suppose, if a
  <code class="highlighter-rouge">string</code> is tried to concatenate with falsy values then the result would be the combination of the <code class="highlighter-rouge">string</code> and falsy value.</p>
 
-<hr>
-<p><strong>5.3 String</strong>.indexOf() :</p>
+ <hr>
+ <p><strong>5.3 String</strong>.indexOf() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s2">"akhil"</span><span class="p">;</span>
+ <span class="kd">var</span> <span class="nx">str2</span> <span class="o">=</span> <span class="s2">"pandey"</span><span class="p">;</span>
 
-<hr>
-<p><strong>5.4 String</strong>.lastIndexOf() :</p>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>                     <span class="c1">// returns the value 0</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"k"</span><span class="p">);</span>                     <span class="c1">// returns the value 1</span>
+ <span class="nx">str2</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"n"</span><span class="p">);</span>                     <span class="c1">// returns the value 2</span>
 
-<hr>
-<p><strong>5.5 String</strong>.link() :</p>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"hi"</span><span class="p">);</span>                    <span class="c1">// returns the value 2</span>
+ <span class="nx">str2</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"ey"</span><span class="p">);</span>                    <span class="c1">// returns the value 4</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">"akhi"</span><span class="p">);</span>                  <span class="c1">// returns the value 0</span>
+ </code></pre>
+ </div>
+ <p><strong>String</strong>.indexOf() is a method which returns the index of a given character
+ in a string. The value that is being returned is numeric and if the method returns a value of <code class="highlighter-rouge">-1</code>
+ it means that the requested substring or character is not found in the
+ main string. Also, this method is typically used for knowing
+ the index of particular character rather than a string. If a substring
+ of length greater than <code class="highlighter-rouge">1</code> is given
+ as input then it would just return the index of the first character in
+ that particular substring. So, it would not be feasible to employ this
+ method when you search for substrings having more than one character.
+ The above code snippet portrays properly how would <strong>String</strong>.indexOf() return values if a single character is given as input as and when compared to more than one character.</p>
 
-<hr>
-<p><strong>5.6 String</strong>.search() :</p>
+ <hr>
+ <p><strong>5.4 String</strong>.lastIndexOf() :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s2">"Marshmallow"</span><span class="p">;</span>
+ <span class="kd">var</span> <span class="nx">str2</span> <span class="o">=</span> <span class="s2">"palladium"</span><span class="p">;</span>
 
-<hr>
-<p><strong>5.4 String</strong>.slice() :</p>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">"m"</span><span class="p">);</span>                     <span class="c1">// returns the value 5</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">"a"</span><span class="p">);</span>                     <span class="c1">// returns the value 6</span>
+ <span class="nx">str2</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">"l"</span><span class="p">);</span>                     <span class="c1">// returns the value 3</span>
 
-<hr>
-<p><code class="highlighter-rouge">TIPS[Strings]:</code></p>
+ <span class="nx">str2</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">"ad"</span><span class="p">);</span>                    <span class="c1">// returns the value 4</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">"mal"</span><span class="p">);</span>                   <span class="c1">// returns the value 5</span>
+ <span class="nx">str1</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">"ow"</span><span class="p">);</span>                    <span class="c1">// returns the value 9</span>
+ </code></pre>
+ </div>
+ <p><strong>String</strong>.lastIndexOf() is a method that returns the
+ index of the last occurrence of a given character in a string. The value
+ that is being returned is numeric and if the method returns a value of <code class="highlighter-rouge">-1</code>
+ it means that the requested substring or character is not found in the
+ main string. This method is quite similar in operational style as and
+ when compared to <strong>String</strong>.indexOf() while the only
+ significant difference being the position of index that is being
+ returned. Ideally, this method is very useful to locate the last index
+ of characters in a string that has multiple occurrences of a single
+ character. In the code snippet demonstrated above, it is clearly visible
+ as to how would <strong>String</strong>.lastIndexOf() would be helpful in finding last index of given character in a string. Similar to <strong>String</strong>.indexOf()
+ if more than one character/substring is given as input then the result
+ that would pipe out will only take the first character into
+ consideration.</p>
 
-<ul>
+ <hr>
+ <p><strong>5.5 String</strong>.search() :</p>
+
+ <hr>
+ <p><strong>5.6 String</strong>.split() :</p>
+
+ <hr>
+ <p><strong>5.7 String</strong>.slice() :</p>
+
+ <hr>
+ <p><code class="highlighter-rouge">TIPS[Strings]:</code></p>
+
+ <ul>
   <li>
     <p><strong>string.slice()</strong> : The method <strong>string.slice()</strong>
  essentially extracts part of a string and returns the new string which
-is sliced. The general notation for using the string.slice method is
-string.slice(pos1, pos2) where in pos1 is the position of the starting
-index and pos2 is the position of ending index. The point to be noted
-here is if we use the string.slice() method by passing negative
-parameters then it ends up counting and extracting the string from the
-end to the start. And if we donot pass the second parameter the method
-extracts the rest of the string.</p>
+ is sliced. The general notation for using the string.slice method is
+ string.slice(pos1, pos2) where in pos1 is the position of the starting
+ index and pos2 is the position of ending index. The point to be noted
+ here is if we use the string.slice() method by passing negative
+ parameters then it ends up counting and extracting the string from the
+ end to the start. And if we donot pass the second parameter the method
+ extracts the rest of the string.</p>
   </li>
   <li>
     <p><strong>string.substring()</strong> : The method <strong>string.slice()</strong> and <strong>string.substring()</strong>
  fall into the same category of methods that can be used for extracting
-part or parts of string from the source string. The difference in both
-is that we cannot use negative indexes when using the method
-string.substring(). For example if we pass on a negative index to the
-method like string.substring(-7,-1) then it essentially doesnot pipe out
+ part or parts of string from the source string. The difference in both
+ is that we cannot use negative indexes when using the method
+ string.substring(). For example if we pass on a negative index to the
+ method like string.substring(-7,-1) then it essentially doesnot pipe out
  any error indicating the mistake made for using negative index but
-displays the string as a whole</p>
+ displays the string as a whole</p>
   </li>
-</ul>
+ </ul>
 
-<hr>
+ <hr>
 
-<h5 id="6-objects" class="header-level-2">6. Objects:</h5>
+ <h5 id="6-objects" class="header-level-2">6. Objects:</h5>
 
-<p>In Javascript:</p>
+ <p>In Javascript:</p>
 
-<table>
+ <table>
   <thead>
     <tr>
       <th>Types</th>
@@ -928,184 +1075,184 @@ displays the string as a whole</p>
       <td style="text-align: center">✔</td>
     </tr>
   </tbody>
-</table>
+ </table>
 
-<p>So basically except the primitive values all are objects in Javascript</p>
+ <p>So basically except the primitive values all are objects in Javascript</p>
 
-<p><strong>6.1</strong> <code class="highlighter-rouge">Objects can be created using three methods</code>:</p>
+ <p><strong>6.1</strong> <code class="highlighter-rouge">Objects can be created using three methods</code>:</p>
 
-<ul>
+ <ul>
   <li><strong>6.1.1</strong> : “Define and create an object using an Object literal.”
     <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// creating an oject using an Object literal</span>
-<span class="kd">var</span> <span class="nx">staff</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="kd">var</span> <span class="nx">staff</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">name</span> <span class="p">:</span> <span class="s2">"somename"</span><span class="p">,</span>
   <span class="na">branch</span> <span class="p">:</span> <span class="s2">"somebranch"</span><span class="p">,</span>
   <span class="na">salary</span> <span class="p">:</span> <span class="s2">"somesalary"</span><span class="p">,</span>
   <span class="na">age</span> <span class="p">:</span> <span class="mi">20</span>
-<span class="p">};</span>
-</code></pre>
+ <span class="p">};</span>
+ </code></pre>
     </div>
   </li>
   <li><strong>6.1.2</strong> : “Define and create an object using an keyword new.”
     <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// creating an object using new keyword</span>
-<span class="kd">var</span> <span class="nx">admin</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
-<span class="nx">admin</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"somename"</span><span class="p">;</span>
-<span class="nx">admin</span><span class="p">.</span><span class="nx">department</span> <span class="o">=</span> <span class="s2">"somedept"</span><span class="p">;</span>
-<span class="nx">admin</span><span class="p">.</span><span class="nx">userid</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
-<span class="nx">admin</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-</code></pre>
+ <span class="kd">var</span> <span class="nx">admin</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+ <span class="nx">admin</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"somename"</span><span class="p">;</span>
+ <span class="nx">admin</span><span class="p">.</span><span class="nx">department</span> <span class="o">=</span> <span class="s2">"somedept"</span><span class="p">;</span>
+ <span class="nx">admin</span><span class="p">.</span><span class="nx">userid</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+ <span class="nx">admin</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+ </code></pre>
     </div>
   </li>
   <li><strong>6.1.3</strong> : “Define an object constructor and then create objects of its type.”
     <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// creating an object using the object constructor</span>
-<span class="kd">function</span> <span class="nx">student</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">github_nick</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+ <span class="kd">function</span> <span class="nx">student</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">github_nick</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">github</span> <span class="o">=</span> <span class="s2">"https://github.com/"</span> <span class="o">+</span> <span class="nx">github_nick</span><span class="p">;</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="nx">url</span><span class="p">;</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
+ <span class="p">}</span>
+ </code></pre>
     </div>
   </li>
-</ul>
+ </ul>
 
-<p><strong>6.2</strong> <code class="highlighter-rouge">Using the constructor for the above defined Object</code> :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">akhil</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">student</span><span class="p">(</span><span class="s2">"Akhil Pandey"</span><span class="p">,</span> <span class="s2">"AkhilHector"</span><span class="p">,</span> <span class="s2">"https://www.akhilhector.com"</span><span class="p">,</span> <span class="s2">"20"</span><span class="p">);</span>
-</code></pre>
-</div>
+ <p><strong>6.2</strong> <code class="highlighter-rouge">Using the constructor for the above defined Object</code> :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">akhil</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">student</span><span class="p">(</span><span class="s2">"Akhil Pandey"</span><span class="p">,</span> <span class="s2">"AkhilHector"</span><span class="p">,</span> <span class="s2">"https://www.akhilhector.com"</span><span class="p">,</span> <span class="s2">"20"</span><span class="p">);</span>
+ </code></pre>
+ </div>
 
-<p><strong>6.3</strong> <code class="highlighter-rouge">Accessing object methods</code> :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">akhil</span><span class="p">.</span><span class="nx">github</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">akhil</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
-</code></pre>
-</div>
+ <p><strong>6.3</strong> <code class="highlighter-rouge">Accessing object methods</code> :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">akhil</span><span class="p">.</span><span class="nx">github</span><span class="p">);</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">akhil</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+ </code></pre>
+ </div>
 
-<p><strong>6.4</strong> <code class="highlighter-rouge">Using the prototype property</code> :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">student</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">show</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">github</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-</div>
+ <p><strong>6.4</strong> <code class="highlighter-rouge">Using the prototype property</code> :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">student</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">show</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">github</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+ <span class="p">}</span>
+ </code></pre>
+ </div>
 
-<p><strong>6.5</strong> <code class="highlighter-rouge">Adding methods to the prototype</code> :</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">student</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">github_nick</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">github</span> <span class="o">=</span> <span class="s2">"https://github.com/"</span> <span class="o">+</span> <span class="nx">github_nick</span><span class="p">;</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="nx">url</span><span class="p">;</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
-	<span class="k">this</span><span class="p">.</span><span class="nx">show</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">github</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-</div>
+ <p><strong>6.5</strong> <code class="highlighter-rouge">Adding methods to the prototype</code> :</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">student</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">github_nick</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">github</span> <span class="o">=</span> <span class="s2">"https://github.com/"</span> <span class="o">+</span> <span class="nx">github_nick</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="nx">url</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">show</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">github</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+    <span class="p">}</span>
+ <span class="p">}</span>
+ </code></pre>
+ </div>
 
-<p><code class="highlighter-rouge">NOTE</code>: Javasctipt objects are
-mutable which means that they are referenced by address and not value.
-For instance if ‘master’ is an object and ‘master-backup’ is also
-another object then if we pass the objects then changing one might
-result in changing the other object also.</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+ <p><code class="highlighter-rouge">NOTE</code>: Javasctipt objects are
+ mutable which means that they are referenced by address and not value.
+ For instance if ‘master’ is an object and ‘master-backup’ is also
+ another object then if we pass the objects then changing one might
+ result in changing the other object also.</p>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
  <span class="kd">var</span> <span class="nx">master</span> <span class="o">=</span> <span class="p">{</span><span class="na">foo</span> <span class="p">:</span> <span class="s2">"foo"</span><span class="p">};</span>
  <span class="kd">var</span> <span class="nx">master</span><span class="o">-</span><span class="nx">backup</span> <span class="o">=</span> <span class="nx">master</span><span class="p">;</span>
  <span class="nx">master</span><span class="p">.</span><span class="nx">backup</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="s2">"bar"</span><span class="p">;</span> <span class="c1">// this changes master.bar and master-backup.bar</span>
-<span class="p">}</span>
+ <span class="p">}</span>
 
-<span class="nb">Object</span><span class="p">.</span><span class="nx">access</span><span class="p">.</span><span class="nx">property</span> <span class="o">=</span> <span class="p">{</span>
-<span class="s2">"Option1"</span> <span class="p">:</span> <span class="s2">"we can use objectName.propertyName"</span><span class="p">,</span>
-<span class="s2">"Option2"</span> <span class="p">:</span> <span class="s2">"Either we can write objectName[propertyName]"</span>
-<span class="p">}</span>
-</code></pre>
-</div>
+ <span class="nb">Object</span><span class="p">.</span><span class="nx">access</span><span class="p">.</span><span class="nx">property</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="s2">"Option1"</span> <span class="p">:</span> <span class="s2">"we can use objectName.propertyName"</span><span class="p">,</span>
+ <span class="s2">"Option2"</span> <span class="p">:</span> <span class="s2">"Either we can write objectName[propertyName]"</span>
+ <span class="p">}</span>
+ </code></pre>
+ </div>
 
-<hr>
+ <hr>
 
-<h5 id="7-functions" class="header-level-2">7. Functions:</h5>
+ <h5 id="7-functions" class="header-level-2">7. Functions:</h5>
 
-<hr>
+ <hr>
 
-<h5 id="8-conventions" class="header-level-2">8. Conventions:</h5>
+ <h5 id="8-conventions" class="header-level-2">8. Conventions:</h5>
 
-<hr>
+ <hr>
 
-<h5 id="9-closures" class="header-level-2">9. Closures:</h5>
+ <h5 id="9-closures" class="header-level-2">9. Closures:</h5>
 
-<p>Function Closures in Javascript is all about how are the variables
-being treated and referred to in the local or global scope. In Js
-variables can be given :</p>
+ <p>Function Closures in Javascript is all about how are the variables
+ being treated and referred to in the local or global scope. In Js
+ variables can be given :</p>
 
-<ul>
+ <ul>
   <li>‘local scope’</li>
   <li>‘global scope’</li>
-</ul>
+ </ul>
 
-<p>There is no inbuilt concept for something called private variables,
-so when there is a requirement for such a scenario Closures are written
-in Js in order to make scope for variables that are private in scope.</p>
+ <p>There is no inbuilt concept for something called private variables,
+ so when there is a requirement for such a scenario Closures are written
+ in Js in order to make scope for variables that are private in scope.</p>
 
-<hr>
+ <hr>
 
-<h5 id="10-currying-" class="header-level-2">10. Currying :</h5>
+ <h5 id="10-currying-" class="header-level-2">10. Currying :</h5>
 
-<p>Currying is a process of building a function by taking multiple arguments and partially applying
-them through a series of functions. So to be specific, you can break down the given function that
-takes multiple arguments into series of functions that take part of the arguments.</p>
+ <p>Currying is a process of building a function by taking multiple arguments and partially applying
+ them through a series of functions. So to be specific, you can break down the given function that
+ takes multiple arguments into series of functions that take part of the arguments.</p>
 
-<p>Let us take a common example :</p>
+ <p>Let us take a common example :</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
-</code></pre>
-</div>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+ </code></pre>
+ </div>
 
-<hr>
+ <hr>
 
-<h5 id="11-tail-calls" class="header-level-2">11. Tail Calls:</h5>
+ <h5 id="11-tail-calls" class="header-level-2">11. Tail Calls:</h5>
 
-<p>Tail calls are nothing but essentially replacing the concept of recursive
-functions with loop. In a way this can not only save time but also saves
-space i.e better time complexity and space complexity.</p>
+ <p>Tail calls are nothing but essentially replacing the concept of recursive
+ functions with loop. In a way this can not only save time but also saves
+ space i.e better time complexity and space complexity.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// snippet one</span>
-<span class="kd">function</span> <span class="nx">f</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">if</span><span class="p">(</span><span class="nx">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="k">else</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">n</span> <span class="o">*</span> <span class="nx">f</span><span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-	<span class="p">}</span>
-<span class="p">}</span>
+ <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// snippet one</span>
+ <span class="kd">function</span> <span class="nx">f</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">n</span> <span class="o">*</span> <span class="nx">f</span><span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+ <span class="p">}</span>
 
-<span class="c1">// snippet two</span>
-<span class="kd">function</span> <span class="nx">f1</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-	<span class="kd">function</span> <span class="nx">r</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">if</span><span class="p">(</span><span class="nx">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-			<span class="k">return</span> <span class="nx">m</span><span class="p">;</span>
-		<span class="p">}</span>
-		<span class="k">else</span> <span class="p">{</span>
-			<span class="k">return</span> <span class="nx">r</span><span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">n</span><span class="o">*</span><span class="nx">m</span><span class="p">);</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="nx">r</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-</div>
+ <span class="c1">// snippet two</span>
+ <span class="kd">function</span> <span class="nx">f1</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">r</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">m</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">r</span><span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">n</span><span class="o">*</span><span class="nx">m</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">r</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+ <span class="p">}</span>
+ </code></pre>
+ </div>
 
-<p>Observing both the algorithms above written for factorial we can understand
-that f() is the traditional recursive method used for finding the factorial,
-but f1() is the tail call optimized algorithm which is better and fast.</p>
+ <p>Observing both the algorithms above written for factorial we can understand
+ that f() is the traditional recursive method used for finding the factorial,
+ but f1() is the tail call optimized algorithm which is better and fast.</p>
 
-<hr>
+ <hr>
 
-<h5 id="oh-snoop-that-piece-of-code-isnt-right-" class="header-level-2">Oh snoop, that piece of code isn’t right !</h5>
+ <h5 id="oh-snoop-that-piece-of-code-isnt-right-" class="header-level-2">Oh snoop, that piece of code isn’t right !</h5>
 
-<p>Although the best of efforts have been put in to make sure the
-entire documentation is error free there might be small instances where mistakes
-might have occurred. In such cases please raise an issue and help me make this
-cheat sheet better.</p>
+ <p>Although the best of efforts have been put in to make sure the
+ entire documentation is error free there might be small instances where mistakes
+ might have occurred. In such cases please raise an issue and help me make this
+ cheat sheet better.</p>
 
-<hr>
+ <hr>
 
-<h5 id="akhil-pandey" class="header-level-2"><a href="https://github.com/AkhilHector">Akhil Pandey</a></h5>
+ <h5 id="akhil-pandey" class="header-level-2"><a href="https://github.com/AkhilHector">Akhil Pandey</a></h5>
 
       </section>
 
@@ -1129,4 +1276,5 @@ cheat sheet better.</p>
 
 
 
-</body></html>
+ </body>
+</html>
