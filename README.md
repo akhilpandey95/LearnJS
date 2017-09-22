@@ -619,6 +619,40 @@ console.log(combine);
   not be put to use if the purpose is iterating over some elements.
 
 ------------------
+**4.12 Array**.filter() :
+```javascript
+function oddNumbers(number) {
+    return number % 2 != 0 ? true:false;
+}
+
+function evenNumbers(number) {
+    return number % 2 == 0 ? true:false;
+}
+
+console.log([1, 2, 3, 4, 5, 6, 7, 8, 9].filter(oddNumbers));        // returns '[ 1, 3, 5, 7, 9 ]'
+console.log([1, 2, 3, 4, 5, 6, 7, 8, 9].filter(evenNumbers));       // returns '[ 2, 4, 6, 8 ]'
+console.log([1, 2, 3, 4, 5, 6, 7, 8, 9].filter(number => number*number));       // returns '[ 2, 4, 6, 8 ]'
+```
+  **Array**.filter() is a method that takes a function as an argument and would return an array containing all the elements that successfully passed the function's test condition. The function given to **Array**.filter() as input would take the array, index and element into consideration while applying the specified computation on every element in the given array. In the above code snippet it can be observed how filter takes an array as input and applies the respective function onto every element and returns a new array that would successfully pass the test. There is more to this method than what is just explained. Since, it is difficult to express the power and magnitude of **Array**.filter() in one go, it is better to please check MDN docs for further information on **Array.prototype**.filter().
+
+------------------
+**4.13 Array**.some() :
+```javascript
+function hasSingleDigitNum(elements) {
+    return elements > 10;
+}
+
+var arr1 = [1, 5, 7, 8, 9];
+var arr2 = [3, 6, 9, 12, 100];
+
+console.log(arr1.some(hasSingleDigitNum));                  // returns false
+console.log(arr2.some(hasSingleDigitNum));                  // returns true
+console.log([1, 2, 3, 4, 5].some(hasSingleDigitNum));       // returns false
+
+```
+  **Array**.some() is a mutator method that would take a function as an input and then apply that function to every element in the given array. So, it would just give the result of that function as and when applied to every element in the array. The result of this particular method is `true` if the value is `Truthy` and `false` if not. The confusing part here is, when you have an array that would potentially have both `Truthy` and `Falsy` values then it would return `true` since there is a `Truthy` value obtained after **Array**.some() performed the computation on every element of the array. So, it would be advised to understand the full context of this method before this is used for identifying any outliers present in your array because, instead of returning the result it would just pipe out `true` or `false`. Check MDN for more information on this method.
+
+------------------
 **4.14 Array**.reduce() :
 ```javascript
 function combine(prev, curr) {
