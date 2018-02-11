@@ -341,22 +341,60 @@ Methods part of Javascript **Set** Object:
 **3.1 Set**.add() :
 ```javascript
 var s1 = new Set()
+
+s1.add('akhil')
+s1.add(123)
+s1.add(456.789)
+s1.add(true)
+s1.add({id: 123456})
+s1.add(NaN)
+s1.add(null)
+
+console.log(s1) // Set { 'akhil', 123, 456.789, true, { id: 123456 }, NaN, null}
 ```
-**Set**.add() is .
+**Set**.add() is a mutator method for adding values to a Set. The procedure
+for achieving this is straightforward. We call the `add()` method to the
+already created `Set` object and pass the value which we want into the Set
+as an argument. When more than one argument is passed to the `add()` method
+it just ignores the remaining arguments and considers only the first argument. It is to be noted that the `Set` object does not have any restrictions to the type of value being passed nor does it enforce any restrictions when we make the `Set` heterogeneous. `NaN`, `null` can also be part of a `Set`. Although, it is never encouraged to fill the `Set` with values of this nature.
 
 ------------------
 **3.2 Set**.has() :
 ```javascript
 var s1 = new Set()
+
+s1.add(123)
+s1.add(456)
+s1.add(789)
+s1.add("akhil")
+s1.add(null)
+
+s1.has(123)                     // returns true
+s1.has(NaN)                     // returns false
+s1.has("akhil")                 // returns true
+s1.has(456.12)                  // returns false
+s1.has(123.0000000000000009123) // returns true
 ```
-**Set**.has() is .
+**Set**.has() is a method that is helpful in determining if an element exists
+in the `Set` or not. The method returns either `true` if the value is present
+and `false` if the value is not present. If we observe the above example there
+is a small disparity between the expected nature of the method and its ground reality. `s1.add(123.0000000000000009123)` is one example which sheds some light on the decade long rivalry between Javascript and floating point values.
+This could be avoided simply by using **number**.toPrecision(). Also, in Javascript it is always encouraged to handle floating points carefully.
 
 ------------------
 **3.3 Set**.size :
 ```javascript
-var s1 = new Set()
+var s1 = new Set([1, 23, 456, 78910])
+var s2 = new Set()
+
+s2.add("akhil")
+s2.add("chandu")
+s2.add("adheeth")
+
+console.log(s1.size) // returns 4
+console.log(s2.size) // returns 3
 ```
-**Set**.size is .
+**Set**.size is not a method but it is an property of the .
 
 ------------------
 **3.4 Set**.clear() :
