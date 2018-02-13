@@ -354,14 +354,26 @@ s2.add("adheeth")
 console.log(s1.size) // returns 4
 console.log(s2.size) // returns 3
 ```
-**Set**.size is not a method but it is an property of the .
+**Set**.size is not a method but it is an property of the Sets object useful for determining the size of the `Set`. As you can observe from the above code
+snippet, it is just called like an accessor method. If we try to call the property using `size()` then it throws a **TypeError** saying `Set.size` is not a function.
 
 ------------------
 **3.4 Set**.clear() :
 ```javascript
 var s1 = new Set()
+
+s1.add("akhil")
+s1.add("krishna")
+s1.add("pardhu")
+
+console.log(s1.has("akhil"))   // returns true
+console.log(s1.has("krishna")) // returns true
+s1.clear("pardhu")
+s1.clear()
+console.log(s1.has("akhil"))   // returns false
+console.log(s1.has("pardhu"))  // returns false
 ```
-**Set**.clear() is .
+**Set**.clear() is a method that clears all the elements present in the Set. This results in emptying the `Set`. If we observe in the above code snippet there is an attempt to pass an argument to the **Set**.clear() method and irrespective of what argument is passed to the method it just ignores and performs the `clear()` operation on the `Set`. Also, there is no restriction over the number of times in which the operation is performed.
 
 ------------------
 **3.5 Set**.delete() :
