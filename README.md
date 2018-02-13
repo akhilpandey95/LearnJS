@@ -379,6 +379,20 @@ console.log(s1.has("pardhu"))  // returns false
 **3.5 Set**.delete() :
 ```javascript
 var s1 = new Set()
+
+s1.add("akhil")
+s1.add("dusi")
+s1.add("om")
+s1.add("siddu")
+
+console.log(s1.has("akhil"))
+console.log(s1.delete("akhil"))
+console.log(s1.delete("foo"))
+console.log(s1.has("akhil"))
+
+for (let item of s1) {
+    console.log(item)
+}
 ```
 **Set**.delete() is .
 
