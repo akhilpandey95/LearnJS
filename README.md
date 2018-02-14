@@ -293,7 +293,6 @@ Methods part of Javascript **Set** Object:
 - **Set**.size,
 - **Set**.clear(),
 - **Set**.delete(),
-- **Set**.keys(),
 - **Set**.values(),
 - **Set**.entries()
 
@@ -397,21 +396,14 @@ for (let item of s1) {
 **Set**.delete() is a method used for removing an element from the Set. The method accepts only one argument and returns a boolean value `true` or `false`. If more than one argument is passed to `delete()` then it just ignores the remaining arguments and considers just the first argument.
 
 ------------------
-**3.6 Set**.keys() :
-```javascript
-var s1 = new Set()
-```
-**Set**.keys() is .
-
-------------------
-**3.7 Set**.values() :
+**3.6 Set**.values() :
 ```javascript
 var s1 = new Set()
 ```
 **Set**.values() is .
 
 ------------------
-**3.8 Set**.entries() :
+**3.7 Set**.entries() :
 ```javascript
 var s1 = new Set()
 ```
