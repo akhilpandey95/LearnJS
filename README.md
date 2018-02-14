@@ -392,9 +392,9 @@ console.log(s1.has("akhil"))
 
 for (let item of s1) {
     console.log(item)
-}
+}s
 ```
-**Set**.delete() is .
+**Set**.delete() is a method used for removing an element from the Set. The method accepts only one argument and returns a boolean value `true` or `false`. If more than one argument is passed to `delete()` then it just ignores the remaining arguments and considers just the first argument.
 
 ------------------
 **3.6 Set**.keys() :
