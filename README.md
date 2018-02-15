@@ -391,7 +391,7 @@ console.log(s1.has("akhil"))
 
 for (let item of s1) {
     console.log(item)
-}s
+}
 ```
 **Set**.delete() is a method used for removing an element from the Set. The method accepts only one argument and returns a boolean value `true` or `false`. If more than one argument is passed to `delete()` then it just ignores the remaining arguments and considers just the first argument.
 
@@ -399,15 +399,40 @@ for (let item of s1) {
 **3.6 Set**.values() :
 ```javascript
 var s1 = new Set()
+var s2 = new Set()
+
+s1.add("foo")
+s1.add("bar")
+s1.add("foobar")
+s1.add("barfoo")
+
+for (let items of s1.values()) {
+    s2.add(items)
+}
+
+console.log(s1.values())   // returns SetIterator { 'foo', 'bar', 'foobar', 'barfoo' }
+console.log(s2.values())   // returns SetIterator { 'foo', 'bar', 'foobar', 'barfoo' }
+console.log(s1.has("foo")) // returns true
+console.log(s2.has("foo")) // returns true
 ```
-**Set**.values() is .
+**Set**.values() is a method that returns the values present in the `Set`. If we use `s1.values()` in a loop as shown in the above code snippet then all we get back is a value as we iterate over the `Set`. Also, this might sound similar to the method in `Map`, but there is a small distinction, which is **Map**.values() would only return the values present in the `Map` and **Map**.keys() would return only the keys associated with every value/element. Now, since a `Set` has key and value as the same element there isn't much of distinction between **Set**.values() and **Set**.keys(). We would be returned with the same iterable objects with no difference at all.
 
 ------------------
 **3.7 Set**.entries() :
 ```javascript
 var s1 = new Set()
+
+s1.add("foo")
+s1.add("goo")
+s1.add("bar")
+s1.add("gar")
+
+// the keys are
+for (let pairs of s1.entries()) {
+    console.log("key["+pairs[0]+"] => "+pairs[1])
+}
 ```
-**Set**.entries() is .
+**Set**.entries() is a method that returns an array of values for the values present in the `Set`. We have to understand that in a `Set` the key and value remain the same, So when we call the **Set**.entries() method all we get is a nx2 array of values where n[0] and n[1] contain the same value. We can also assign `s1.entries()` to a variable or a constant and in that case we would get an iterator Object in return that could be played around using `next()`.
 
 ------------------
 
