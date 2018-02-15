@@ -271,14 +271,54 @@ any more values present.
 ------------------
 **2.9 Map**.entries() :
 ```javascript
-var m1 = new Map()
+var m1 = new Map();
+let x = {id: 1},
+    y = {id: 2};
+
+m1.set(x, "foo");                   // Map { { id: 1 } => 'foo' }
+m1.set(y, "bar");                   // Map { { id: 1 } => 'foo', { id: 2 } => 'bar' }
+
+m1.entries();                       // MapIterator { [ { id: 1 }, 'foo' ], [ { id: 2 }, 'bar' ] }
+
+let iterator = m1.values();
+console.log(iterator.next().value); // [ { id: 1 }, 'foo' ]
+console.log(iterator.next().value); // [ { id: 2 }, 'bar' ]
+console.log(iterator.next().value); // undefined
 ```
-**Map**.entries() is .
+**Map**.entries() is a method which is sued to return the keys and values present in
+the `Map` object for each element. The method is quite similar to **Map**.values() for
+the fact that it returns an **Iterator** object that could be used to know the keys and
+values present in the `Map`. In the above example it is showcased as to how to iterate
+over the **Map**.entries() using `next()`. The method's ability and its way of operation
+is quite similar to **Map**.values() except for the fact that keys are also returned along
+with the values as we iterate over the **Iterator** object. Similar to any **Iterator**
+object once it reaches the end of its plane it would throw and `undefined`. Also, it is
+to be noted that any other method that applies to an **Iterator** object could be used
+with this since it is one and the same.
 
 ------------------
 
 
-`MISC[Maps] :` **WeakMaps**
+`MISC[Maps] :` **WeakMaps** can be considered as **Maps** with differences in the methodology
+of which garbage collections happen under the hood. To put it in simpler and plain terminology
+there has to be a little conceptual lesson told in order to bring perspective. In Javascript
+broadly everything is an **object** therefore the moment you create one and the memory is being allocated for the same and until the V8 automatically GC's (short for garbage collects) the object remains as a node in the graph. It is to be noted that until there are no references to the object created in the memory it would not be GC'd, so all the objects are held `tightly` or `strongly`. So essentially, the difference that is being brought with **WeakMaps** is that the keys of the object are held `weakly` henceforth, if the object is GC'd by V8 or by you then the entry would be removed from the **WeakMap** but not is values. There is no stark difference between the way **Maps** and **WeakMaps** operate although, **WeakMaps** only accept objects as keys(strictly). Let us look below to see how they are initialized:
+```javascript
+var m1 = new WeakMap();
+let x = {id: 1},
+    y = {id: 2};
+
+m1.set(x, "foo");                   // WeakMap {}
+m1.set(y, "bar");                   // WeakMap {}
+
+m1.get(x);                          // 'foo'
+m1.get(y);                          // 'bar'm1.
+```
+It is to be noted that although the way **WeakMaps** API interacts with us the same way as
+the **Maps** object does, there are limitations to the operations provided by the **WeakMaps**
+API. It supports `get()`, `set()`, `has()` and `delete()` methods as of now.
+
+------------------
 
 `MISC[Maps] :` Use of **...** operator
 
