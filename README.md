@@ -333,7 +333,6 @@ Methods part of Javascript **Set** Object:
 - **Set**.size,
 - **Set**.clear(),
 - **Set**.delete(),
-- **Set**.keys(),
 - **Set**.values(),
 - **Set**.entries()
 
@@ -394,42 +393,86 @@ s2.add("adheeth")
 console.log(s1.size) // returns 4
 console.log(s2.size) // returns 3
 ```
-**Set**.size is not a method but it is an property of the .
+**Set**.size is not a method but it is an property of the Sets object useful for determining the size of the `Set`. As you can observe from the above code
+snippet, it is just called like an accessor method. If we try to call the property using `size()` then it throws a **TypeError** saying `Set.size` is not a function.
 
 ------------------
 **3.4 Set**.clear() :
 ```javascript
 var s1 = new Set()
+
+s1.add("akhil")
+s1.add("krishna")
+s1.add("pardhu")
+
+console.log(s1.has("akhil"))   // returns true
+console.log(s1.has("krishna")) // returns true
+s1.clear("pardhu")
+s1.clear()
+console.log(s1.has("akhil"))   // returns false
+console.log(s1.has("pardhu"))  // returns false
 ```
-**Set**.clear() is .
+**Set**.clear() is a method that clears all the elements present in the Set. This results in emptying the `Set`. If we observe in the above code snippet there is an attempt to pass an argument to the **Set**.clear() method and irrespective of what argument is passed to the method it just ignores and performs the `clear()` operation on the `Set`. Also, there is no restriction over the number of times in which the operation is performed.
 
 ------------------
 **3.5 Set**.delete() :
 ```javascript
 var s1 = new Set()
+
+s1.add("akhil")
+s1.add("dusi")
+s1.add("om")
+s1.add("siddu")
+
+console.log(s1.has("akhil"))
+console.log(s1.delete("akhil"))
+console.log(s1.delete("foo"))
+console.log(s1.has("akhil"))
+
+for (let item of s1) {
+    console.log(item)
+}
 ```
-**Set**.delete() is .
+**Set**.delete() is a method used for removing an element from the Set. The method accepts only one argument and returns a boolean value `true` or `false`. If more than one argument is passed to `delete()` then it just ignores the remaining arguments and considers just the first argument.
 
 ------------------
-**3.6 Set**.keys() :
+**3.6 Set**.values() :
 ```javascript
 var s1 = new Set()
+var s2 = new Set()
+
+s1.add("foo")
+s1.add("bar")
+s1.add("foobar")
+s1.add("barfoo")
+
+for (let items of s1.values()) {
+    s2.add(items)
+}
+
+console.log(s1.values())   // returns SetIterator { 'foo', 'bar', 'foobar', 'barfoo' }
+console.log(s2.values())   // returns SetIterator { 'foo', 'bar', 'foobar', 'barfoo' }
+console.log(s1.has("foo")) // returns true
+console.log(s2.has("foo")) // returns true
 ```
-**Set**.keys() is .
+**Set**.values() is a method that returns the values present in the `Set`. If we use `s1.values()` in a loop as shown in the above code snippet then all we get back is a value as we iterate over the `Set`. Also, this might sound similar to the method in `Map`, but there is a small distinction, which is **Map**.values() would only return the values present in the `Map` and **Map**.keys() would return only the keys associated with every value/element. Now, since a `Set` has key and value as the same element there isn't much of distinction between **Set**.values() and **Set**.keys(). We would be returned with the same iterable objects with no difference at all.
 
 ------------------
-**3.7 Set**.values() :
+**3.7 Set**.entries() :
 ```javascript
 var s1 = new Set()
-```
-**Set**.values() is .
 
-------------------
-**3.8 Set**.entries() :
-```javascript
-var s1 = new Set()
+s1.add("foo")
+s1.add("goo")
+s1.add("bar")
+s1.add("gar")
+
+// the keys are
+for (let pairs of s1.entries()) {
+    console.log("key["+pairs[0]+"] => "+pairs[1])
+}
 ```
-**Set**.entries() is .
+**Set**.entries() is a method that returns an array of values for the values present in the `Set`. We have to understand that in a `Set` the key and value remain the same, So when we call the **Set**.entries() method all we get is a nx2 array of values where n[0] and n[1] contain the same value. We can also assign `s1.entries()` to a variable or a constant and in that case we would get an iterator Object in return that could be played around using `next()`.
 
 ------------------
 
@@ -657,40 +700,6 @@ console.log(combine);
   not be put to use if the purpose is iterating over some elements.
 
 ------------------
-**4.12 Array**.filter() :
-```javascript
-function oddNumbers(number) {
-    return number % 2 != 0 ? true:false;
-}
-
-function evenNumbers(number) {
-    return number % 2 == 0 ? true:false;
-}
-
-console.log([1, 2, 3, 4, 5, 6, 7, 8, 9].filter(oddNumbers));        // returns '[ 1, 3, 5, 7, 9 ]'
-console.log([1, 2, 3, 4, 5, 6, 7, 8, 9].filter(evenNumbers));       // returns '[ 2, 4, 6, 8 ]'
-console.log([1, 2, 3, 4, 5, 6, 7, 8, 9].filter(number => number*number));       // returns '[ 2, 4, 6, 8 ]'
-```
-  **Array**.filter() is a method that takes a function as an argument and would return an array containing all the elements that successfully passed the function's test condition. The function given to **Array**.filter() as input would take the array, index and element into consideration while applying the specified computation on every element in the given array. In the above code snippet it can be observed how filter takes an array as input and applies the respective function onto every element and returns a new array that would successfully pass the test. There is more to this method than what is just explained. Since, it is difficult to express the power and magnitude of **Array**.filter() in one go, it is better to please check MDN docs for further information on **Array.prototype**.filter().
-
-------------------
-**4.13 Array**.some() :
-```javascript
-function hasSingleDigitNum(elements) {
-    return elements > 10;
-}
-
-var arr1 = [1, 5, 7, 8, 9];
-var arr2 = [3, 6, 9, 12, 100];
-
-console.log(arr1.some(hasSingleDigitNum));                  // returns false
-console.log(arr2.some(hasSingleDigitNum));                  // returns true
-console.log([1, 2, 3, 4, 5].some(hasSingleDigitNum));       // returns false
-
-```
-  **Array**.some() is a mutator method that would take a function as an input and then apply that function to every element in the given array. So, it would just give the result of that function as and when applied to every element in the array. The result of this particular method is `true` if the value is `Truthy` and `false` if not. The confusing part here is, when you have an array that would potentially have both `Truthy` and `Falsy` values then it would return `true` since there is a `Truthy` value obtained after **Array**.some() performed the computation on every element of the array. So, it would be advised to understand the full context of this method before this is used for identifying any outliers present in your array because, instead of returning the result it would just pipe out `true` or `false`. Check MDN for more information on this method.
-
-------------------
 **4.14 Array**.reduce() :
 ```javascript
 function combine(prev, curr) {
@@ -828,8 +837,8 @@ Methods which are part of Javascript **String** Object:
 - **String**.concat(string1, string2, ...stringN);
 - **String**.indexOf("stringname");
 - **String**.lastIndexOf("stringname");
+- **String**.link(url);
 - **String**.search(regExp);
-- **String**.split(string, delimiter)
 - **String**.slice(begin, end);
 - **String**.substring(begin, end);
 - **String**.substr(begin, end);
@@ -866,54 +875,28 @@ str1.concat([1, 2, 3, 4, 5]);         // returns the string 'akhil1,2,3,4,5'
 str1.concat(" ", 12, 34, 56, 78);     // returns the string 'akhil 12345678'
 str1.concat({a: "123", b: "456"});    // returns the string 'akhil[object Object]'
 ```
-  **String**.concat() is a method which is used to combined two or more string  in order return a new string. Fundamentally this method is used for string
+  **String**.concat() is a method which is used to combined two or more strings
+  in order return a new string. Fundamentally this method is used for string
   operations, but if a string is typically concatenated with another type then
   the resultant will be a string. If we observe above example we see `str1.concat(true)` so here the resultant string is `akhiltrue` as **String**.concat() combines the value of both the arguments and produces a concatenated string as end result. Now there are even special cases for suppose, if a `string` is tried to concatenate with falsy values then the result would be the combination of the `string` and falsy value.
 
 ------------------
 **5.3 String**.indexOf() :
-```javascript
-var str1 = "akhil";
-var str2 = "pandey";
-
-str1.indexOf("a");                     // returns the value 0
-str1.indexOf("k");                     // returns the value 1
-str2.indexOf("n");                     // returns the value 2
-
-str1.indexOf("hi");                    // returns the value 2
-str2.indexOf("ey");                    // returns the value 4
-str1.indexOf("akhi");                  // returns the value 0
-```
-**String**.indexOf() is a method which returns the index of a given character
-in a string. The value that is being returned is numeric and if the method returns a value of `-1` it means that the requested substring or character is not found in the main string. Also, this method is typically used for knowing
-the index of particular character rather than a string. If a substring of length greater than `1` is given as input then it would just return the index of the first character in that particular substring. So, it would not be feasible to employ this method when you search for substrings having more than one character. The above code snippet portrays properly how would **String**.indexOf() return values if a single character is given as input as and when compared to more than one character.
 
 ------------------
 **5.4 String**.lastIndexOf() :
-```javascript
-var str1 = "Marshmallow";
-var str2 = "palladium";
-
-str1.lastIndexOf("m");                     // returns the value 5
-str1.lastIndexOf("a");                     // returns the value 6
-str2.lastIndexOf("l");                     // returns the value 3
-
-str2.lastIndexOf("ad");                    // returns the value 4
-str1.lastIndexOf("mal");                   // returns the value 5
-str1.lastIndexOf("ow");                    // returns the value 9
-```
-**String**.lastIndexOf() is a method that returns the index of the last occurrence of a given character in a string. The value that is being returned is numeric and if the method returns a value of `-1` it means that the requested substring or character is not found in the main string. This method is quite similar in operational style as and when compared to **String**.indexOf() while the only significant difference being the position of index that is being returned. Ideally, this method is very useful to locate the last index of characters in a string that has multiple occurrences of a single character. In the code snippet demonstrated above, it is clearly visible as to how would **String**.lastIndexOf() would be helpful in finding last index of given character in a string. Similar to **String**.indexOf() if more than one character/substring is given as input then the result that would pipe out will only take the first character into consideration.
-
-------------------
-**5.5 String**.search() :
 
 
 ------------------
-**5.6 String**.split() :
+**5.5 String**.link() :
 
 
 ------------------
-**5.7 String**.slice() :
+**5.6 String**.search() :
+
+
+------------------
+**5.4 String**.slice() :
 
 
 ------------------
